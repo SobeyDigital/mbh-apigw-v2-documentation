@@ -311,7 +311,6 @@
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#media-backbone-hive-api-gateway" class="toc-h1 toc-link" data-title="Media Backbone Hive - API Gateway v2">Media Backbone Hive - API Gateway v2</a>
-
           </li>
           <li>
             <a href="#jwt-in-request-header" class="toc-h1 toc-link" data-title="JWT in request header">JWT in request header</a>
@@ -533,20 +532,6 @@
                   </li>
                   <li>
                     <a href="#query-the-planning-list-10-items-per-page-by-default" class="toc-h2 toc-link" data-title="Query the planning list (10 items per page by default)">Query the planning list (10 items per page by default)</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#media-backbone-hive-api-gateway-record" class="toc-h1 toc-link" data-title="Record">Record</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#search-api-logs" class="toc-h2 toc-link" data-title="Search API logs">Search API logs</a>
-                  </li>
-                  <li>
-                    <a href="#get__restful_config" class="toc-h2 toc-link" data-title="get__restful_config">get__restful_config</a>
-                  </li>
-                  <li>
-                    <a href="#post__restful_config" class="toc-h2 toc-link" data-title="post__restful_config">post__restful_config</a>
                   </li>
               </ul>
           </li>
@@ -940,12 +925,6 @@
                     <a href="#tocS_PlanningResponseModelPaginationResponseModel" class="toc-h2 toc-link" data-title="PlanningResponseModelPaginationResponseModel">PlanningResponseModelPaginationResponseModel</a>
                   </li>
                   <li>
-                    <a href="#tocS_SortModel" class="toc-h2 toc-link" data-title="SortModel">SortModel</a>
-                  </li>
-                  <li>
-                    <a href="#tocS_RecordQueryRequestModel" class="toc-h2 toc-link" data-title="RecordQueryRequestModel">RecordQueryRequestModel</a>
-                  </li>
-                  <li>
                     <a href="#tocS_RundownResponseModel" class="toc-h2 toc-link" data-title="RundownResponseModel">RundownResponseModel</a>
                   </li>
                   <li>
@@ -1012,6 +991,9 @@
                     <a href="#tocS_SimpleGroupResponseModel" class="toc-h2 toc-link" data-title="SimpleGroupResponseModel">SimpleGroupResponseModel</a>
                   </li>
                   <li>
+                    <a href="#tocS_FromGroup" class="toc-h2 toc-link" data-title="FromGroup">FromGroup</a>
+                  </li>
+                  <li>
                     <a href="#tocS_SimpleRoleResponseModel" class="toc-h2 toc-link" data-title="SimpleRoleResponseModel">SimpleRoleResponseModel</a>
                   </li>
                   <li>
@@ -1065,11 +1047,7 @@
         <!-- Generator: Widdershins v4.0.1 -->
 
 <h1 id="media-backbone-hive-api-gateway">Media Backbone Hive - API Gateway v2</h1>
-  <ul>
-    <li>Postman collection download: 
-      <a href="https://raw.githubusercontent.com/SobeyDigital/mbh-apigw-v2-documentation/master/API%20Gateway.postman_collection.json" target="_blank">API Gateway.postman_collection.json</a>
-    </li>
-  </ul>
+
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
 </blockquote>
@@ -1288,6 +1266,11 @@ Content-Type: application/json-patch+json
 <tr>
 <td>403: UserDisabled</td>
 <td>Login account has been disabled</td>
+<td>None</td>
+</tr>
+<tr>
+<td>409: DuplicatedLogin</td>
+<td>User has already logged in</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -5546,6 +5529,11 @@ Content-Type: application/json-patch+json
 <td>File analysis failed and it might be caused by unsupported file format</td>
 <td>None</td>
 </tr>
+<tr>
+<td>500: ImportFileFailed</td>
+<td>Failed to import file to material due to internal error</td>
+<td>None</td>
+</tr>
 </tbody></table>
 <h2 id='attach-file-to-material-39-s-file-group'>Attach file to material&#39;s file group</h2>
 <blockquote>
@@ -7607,7 +7595,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>[{"fieldName":"string","alias":"string","description":"string","dataType":"string","isRequired":true,"minLength":0,"maxLength":0,"enums":["string"]}]
+<div class="highlight"><pre class="highlight plaintext"><code>[{"fieldName":"string","alias":"string","description":"string","dataType":"string","isRequired":true,"minLength":0,"maxLength":0,"enums":["string"],"isSupportMultipleValues":true}]
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nl">"fieldName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -7619,7 +7607,8 @@ Accept: text/plain
     </span><span class="nl">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nl">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"string"</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"isSupportMultipleValues"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
@@ -7714,6 +7703,13 @@ Accept: text/plain
 <td>false</td>
 <td>none</td>
 <td>Enum values, available only for &quot;enum&quot; data type</td>
+</tr>
+<tr>
+<td>» isSupportMultipleValues</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>Indicates the enum field whether support array value (multiple values) or single value, available only for &quot;enum&quot; data type</td>
 </tr>
 </tbody></table>
 <h2 id='create-a-material-only-placeholder-without-physical-file'>Create a material only (placeholder) without physical file</h2>
@@ -18379,605 +18375,6 @@ Accept: text/plain
 </tr>
 </tbody></table>
 
-<h1 id="media-backbone-hive-api-gateway-record">Record</h1>
-<h2 id='search-api-logs'>Search API logs</h2>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /restful/search <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/restful/search</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-
-Content-Type: application/json-patch+json
-
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
-  "size": 0,
-  "sort": {
-    "time": "string",
-    "elapsed": "string"
-  },
-  "requestID": [
-    "string"
-  ],
-  "method": "string",
-  "uri": "string",
-  "ip": "string",
-  "code": 0,
-  "startTime": "string",
-  "endTime": "string",
-  "startElapsed": 0,
-  "endElapsed": 0
-}</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/restful/search</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
-  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
-<span class="nb">require</span> <span class="s1">'json'</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
-  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'/restful/search'</span><span class="p">,</span>
-  <span class="ss">params: </span><span class="p">{</span>
-  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
-
-<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
-  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/restful/search'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
-
-<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
-    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
-
-<span class="c1">// Define array of request body.</span>
-<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-
-<span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/restful/search'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
-        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
-       <span class="p">)</span>
-    <span class="p">);</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
- <span class="p">}</span>
- <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handle exception or api errors.</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
- <span class="p">}</span>
-
- <span class="c1">// ...</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/restful/search"</span><span class="o">);</span>
-<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-       <span class="s">"bytes"</span>
-       <span class="s">"net/http"</span>
-<span class="p">)</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
-        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
-        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
-    <span class="p">}</span>
-
-    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/restful/search"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
-
-    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
-    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-    <span class="c">// ...</span>
-<span class="p">}</span>
-
-</code></pre></div>
-<p><code>POST /restful/search</code></p>
-
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"elapsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"requestID"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"startElapsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"endElapsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<h3 id="search-api-logs-parameters">Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>body</td>
-<td>body</td>
-<td><a href="#schemarecordqueryrequestmodel">RecordQueryRequestModel</a></td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» size</td>
-<td>body</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» sort</td>
-<td>body</td>
-<td><a href="#schemasortmodel">SortModel</a></td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» time</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>»» elapsed</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» requestID</td>
-<td>body</td>
-<td>[string]</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» method</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» uri</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» ip</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» code</td>
-<td>body</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» startTime</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» endTime</td>
-<td>body</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» startElapsed</td>
-<td>body</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» endElapsed</td>
-<td>body</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
-<h3 id="search-api-logs-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Success</td>
-<td>None</td>
-</tr>
-</tbody></table>
-<h2 id='get__restful_config'>get__restful_config</h2>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /restful/config <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/restful/config</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
-<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/restful/config</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
-
-  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
-<span class="nb">require</span> <span class="s1">'json'</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'/restful/config'</span><span class="p">,</span>
-  <span class="ss">params: </span><span class="p">{</span>
-  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
-
-<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/restful/config'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
-
-<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
-
-<span class="c1">// Define array of request body.</span>
-<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-
-<span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/restful/config'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
-        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
-       <span class="p">)</span>
-    <span class="p">);</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
- <span class="p">}</span>
- <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handle exception or api errors.</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
- <span class="p">}</span>
-
- <span class="c1">// ...</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/restful/config"</span><span class="o">);</span>
-<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-       <span class="s">"bytes"</span>
-       <span class="s">"net/http"</span>
-<span class="p">)</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
-        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
-    <span class="p">}</span>
-
-    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/restful/config"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
-
-    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
-    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-    <span class="c">// ...</span>
-<span class="p">}</span>
-
-</code></pre></div>
-<p><code>GET /restful/config</code></p>
-
-<h3 id="get__restful_config-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Success</td>
-<td>None</td>
-</tr>
-</tbody></table>
-<h2 id='post__restful_config'>post__restful_config</h2>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST /restful/config <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/restful/config</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
-
-Content-Type: application/json-patch+json
-
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
-  "property1": {},
-  "property2": {}
-}</span><span class="dl">'</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
-  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
-<span class="p">};</span>
-
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/restful/config</span><span class="dl">'</span><span class="p">,</span>
-<span class="p">{</span>
-  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
-  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
-  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
-<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
-<span class="p">});</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
-<span class="nb">require</span> <span class="s1">'json'</span>
-
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
-  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'/restful/config'</span><span class="p">,</span>
-  <span class="ss">params: </span><span class="p">{</span>
-  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
-
-<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
-  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
-<span class="p">}</span>
-
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/restful/config'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
-
-<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
-
-<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
-    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
-<span class="p">);</span>
-
-<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
-
-<span class="c1">// Define array of request body.</span>
-<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
-
-<span class="k">try</span> <span class="p">{</span>
-    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/restful/config'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
-        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
-       <span class="p">)</span>
-    <span class="p">);</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
- <span class="p">}</span>
- <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// handle exception or api errors.</span>
-    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
- <span class="p">}</span>
-
- <span class="c1">// ...</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/restful/config"</span><span class="o">);</span>
-<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
-<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
-<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
-<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
-    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
-<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
-<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
-<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
-<span class="o">}</span>
-<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
-
-</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
-
-<span class="k">import</span> <span class="p">(</span>
-       <span class="s">"bytes"</span>
-       <span class="s">"net/http"</span>
-<span class="p">)</span>
-
-<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
-        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
-        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
-    <span class="p">}</span>
-
-    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
-    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/restful/config"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
-    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
-
-    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
-    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
-    <span class="c">// ...</span>
-<span class="p">}</span>
-
-</code></pre></div>
-<p><code>POST /restful/config</code></p>
-
-<blockquote>
-<p>Body parameter</p>
-</blockquote>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"property1"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-  </span><span class="nl">"property2"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div>
-<h3 id="post__restful_config-parameters">Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>body</td>
-<td>body</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» <strong>additionalProperties</strong></td>
-<td>body</td>
-<td>object</td>
-<td>false</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
-<h3 id="post__restful_config-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Success</td>
-<td>None</td>
-</tr>
-</tbody></table>
-
 <h1 id="media-backbone-hive-api-gateway-rundown">Rundown</h1>
 <h2 id='get-all-rundown-list'>Get all rundown list</h2>
 <blockquote>
@@ -20341,11 +19738,19 @@ The subscription also provides Kafka queue for high-performance application, all
 </tr>
 <tr>
 <td>» events</td>
+<td>ImportFailed</td>
+</tr>
+<tr>
+<td>» events</td>
 <td>ExportStarted</td>
 </tr>
 <tr>
 <td>» events</td>
 <td>ExportFinished</td>
+</tr>
+<tr>
+<td>» events</td>
+<td>ExportFailed</td>
 </tr>
 </tbody></table>
 
@@ -21093,7 +20498,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string"}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string","fromGroup":{"groupCode":"string","groupName":"string"}}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -21110,7 +20515,11 @@ Accept: text/plain
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -21493,7 +20902,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string"}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string","fromGroup":{"groupCode":"string","groupName":"string"}}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -21510,7 +20919,11 @@ Accept: text/plain
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -21556,6 +20969,11 @@ Accept: text/plain
 <td>200</td>
 <td>Success</td>
 <td><a href="#schemauserresponsemodel">UserResponseModel</a></td>
+</tr>
+<tr>
+<td>403: NoPermission</td>
+<td>Operation is forbidden due to admin role is missing</td>
+<td>None</td>
 </tr>
 <tr>
 <td>404: UserNotFound</td>
@@ -21806,7 +21224,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string"}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string","fromGroup":{"groupCode":"string","groupName":"string"}}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -21823,7 +21241,11 @@ Accept: text/plain
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -21876,13 +21298,18 @@ Accept: text/plain
 <td>None</td>
 </tr>
 <tr>
-<td>409: DuplicateLoginName</td>
-<td>The requested login name exists, please try another login name</td>
+<td>403: NoPermission</td>
+<td>Operation is forbidden due to admin role is missing</td>
 <td>None</td>
 </tr>
 <tr>
 <td>404: GroupNotFound</td>
 <td>Specified group doesn&#39;t exist</td>
+<td>None</td>
+</tr>
+<tr>
+<td>409: DuplicateLoginName</td>
+<td>The requested login name exists, please try another login name</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -22119,7 +21546,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string"}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string","fromGroup":{"groupCode":"string","groupName":"string"}}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -22136,7 +21563,11 @@ Accept: text/plain
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -25189,7 +24620,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string"}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","avatarUrl":"string","email":"string","loginName":"string","showName":"string","phoneNumber":"string","groups":[{"code":"string","name":"string"}],"roles":[{"code":"string","name":"string","fromGroup":{"groupCode":"string","groupName":"string"}}],"permissions":["string"],"storages":[{"poolCode":"string","description":"string","dependsOnGroup":{},"dependsOnRole":{},"units":[{"unitCode":"string","label":["string"],"files":0,"size":0,"used":0,"roots":{"property1":"string","property2":"string"}}]}],"createTime":"2019-08-24T14:15:22Z","status":"Active"}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"avatarUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -25206,7 +24637,11 @@ Accept: text/plain
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -30111,7 +29546,8 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"maxLength"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"enums"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">]</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"isSupportMultipleValues"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
@@ -30181,6 +29617,13 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>false</td>
 <td>none</td>
 <td>Enum values, available only for &quot;enum&quot; data type</td>
+</tr>
+<tr>
+<td>isSupportMultipleValues</td>
+<td>boolean</td>
+<td>false</td>
+<td>none</td>
+<td>Indicates the enum field whether support array value (multiple values) or single value, available only for &quot;enum&quot; data type</td>
 </tr>
 </tbody></table>
 
@@ -33079,161 +32522,6 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
-<h2 id="tocS_SortModel">SortModel</h2>
-
-<!-- backwards compatibility -->
-
-<p><a id="schemasortmodel"></a>
-<a id="schema_SortModel"></a>
-<a id="tocSsortmodel"></a>
-<a id="tocssortmodel"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"elapsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div><h3 id='properties-95'>Properties</h3>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>time</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>elapsed</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
-<h2 id="tocS_RecordQueryRequestModel">RecordQueryRequestModel</h2>
-
-<!-- backwards compatibility -->
-
-<p><a id="schemarecordqueryrequestmodel"></a>
-<a id="schema_RecordQueryRequestModel"></a>
-<a id="tocSrecordqueryrequestmodel"></a>
-<a id="tocsrecordqueryrequestmodel"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"elapsed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nl">"requestID"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"string"</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"uri"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"startTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"startElapsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"endElapsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre></div><h3 id='properties-96'>Properties</h3>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Required</th>
-<th>Restrictions</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>size</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>sort</td>
-<td><a href="#schemasortmodel">SortModel</a></td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>requestID</td>
-<td>[string]</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>method</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>uri</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>ip</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>code</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>startTime</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>endTime</td>
-<td>string</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>startElapsed</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-<tr>
-<td>endElapsed</td>
-<td>integer(int32)</td>
-<td>false</td>
-<td>none</td>
-<td>none</td>
-</tr>
-</tbody></table>
-
 <h2 id="tocS_RundownResponseModel">RundownResponseModel</h2>
 
 <!-- backwards compatibility -->
@@ -33253,7 +32541,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for rundown</p>
-<h3 id='properties-97'>Properties</h3>
+<h3 id='properties-95'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33319,7 +32607,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Story event status</p>
-<h3 id='properties-98'>Properties</h3>
+<h3 id='properties-96'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33412,7 +32700,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for story event</p>
-<h3 id='properties-99'>Properties</h3>
+<h3 id='properties-97'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33514,7 +32802,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for story</p>
-<h3 id='properties-100'>Properties</h3>
+<h3 id='properties-98'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33560,7 +32848,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response model for searchable field</p>
-<h3 id='properties-101'>Properties</h3>
+<h3 id='properties-99'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33664,7 +32952,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response model for searchable field collection</p>
-<h3 id='properties-102'>Properties</h3>
+<h3 id='properties-100'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33716,7 +33004,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Boolean operators for fulltext search</p>
-<h3 id='properties-103'>Properties</h3>
+<h3 id='properties-101'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33771,7 +33059,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Field condition object</p>
-<h3 id='properties-104'>Properties</h3>
+<h3 id='properties-102'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33816,7 +33104,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Index repository names available for search</p>
-<h3 id='properties-105'>Properties</h3>
+<h3 id='properties-103'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33880,7 +33168,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Fulltext search request object</p>
-<h3 id='properties-106'>Properties</h3>
+<h3 id='properties-104'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33927,7 +33215,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Pagination object</p>
-<h3 id='properties-107'>Properties</h3>
+<h3 id='properties-105'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33993,7 +33281,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Available events for subscription</p>
-<h3 id='properties-108'>Properties</h3>
+<h3 id='properties-106'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34092,11 +33380,19 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 <tr>
 <td><em>anonymous</em></td>
+<td>ImportFailed</td>
+</tr>
+<tr>
+<td><em>anonymous</em></td>
 <td>ExportStarted</td>
 </tr>
 <tr>
 <td><em>anonymous</em></td>
 <td>ExportFinished</td>
+</tr>
+<tr>
+<td><em>anonymous</em></td>
+<td>ExportFailed</td>
 </tr>
 </tbody></table>
 
@@ -34117,7 +33413,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Subscription request object</p>
-<h3 id='properties-109'>Properties</h3>
+<h3 id='properties-107'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34161,7 +33457,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for event subscription</p>
-<h3 id='properties-110'>Properties</h3>
+<h3 id='properties-108'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34210,7 +33506,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The notification operator object</p>
-<h3 id='properties-111'>Properties</h3>
+<h3 id='properties-109'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34264,7 +33560,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Notification wrapper</p>
-<h3 id='properties-112'>Properties</h3>
+<h3 id='properties-110'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34318,7 +33614,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Subscription testing object</p>
-<h3 id='properties-113'>Properties</h3>
+<h3 id='properties-111'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34347,7 +33643,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <a id="tocshttpstatuscode"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"continue"</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-114'>Properties</h3>
+</span></code></pre></div><h3 id='properties-112'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34654,7 +33950,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"errorMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-115'>Properties</h3>
+</span></code></pre></div><h3 id='properties-113'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34726,7 +34022,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-116'>Properties</h3>
+</span></code></pre></div><h3 id='properties-114'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34767,7 +34063,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for permission</p>
-<h3 id='properties-117'>Properties</h3>
+<h3 id='properties-115'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34808,7 +34104,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive group with simple structure</p>
-<h3 id='properties-118'>Properties</h3>
+<h3 id='properties-116'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34834,6 +34130,47 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_FromGroup">FromGroup</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemafromgroup"></a>
+<a id="schema_FromGroup"></a>
+<a id="tocSfromgroup"></a>
+<a id="tocsfromgroup"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Indicate weather inherited from other groups</p>
+<h3 id='properties-117'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>groupCode</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>From group&#39;s code</td>
+</tr>
+<tr>
+<td>groupName</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>From group&#39;s name</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_SimpleRoleResponseModel">SimpleRoleResponseModel</h2>
 
 <!-- backwards compatibility -->
@@ -34844,12 +34181,16 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <a id="tocssimpleroleresponsemodel"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div>
 <p>Response object for Hive role with simple structure</p>
-<h3 id='properties-119'>Properties</h3>
+<h3 id='properties-118'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34872,6 +34213,13 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>false</td>
 <td>none</td>
 <td>Role&#39;s name for display</td>
+</tr>
+<tr>
+<td>fromGroup</td>
+<td><a href="#schemafromgroup">FromGroup</a></td>
+<td>false</td>
+<td>none</td>
+<td>Indicate weather inherited from other groups</td>
 </tr>
 </tbody></table>
 
@@ -34907,7 +34255,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for storage pool</p>
-<h3 id='properties-120'>Properties</h3>
+<h3 id='properties-119'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34966,7 +34314,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User&#39;s status</p>
-<h3 id='properties-121'>Properties</h3>
+<h3 id='properties-120'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35025,7 +34373,11 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"roles"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
       </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fromGroup"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"groupCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"groupName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
   </span><span class="nl">"permissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -35060,7 +34412,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for user</p>
-<h3 id='properties-122'>Properties</h3>
+<h3 id='properties-121'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35170,7 +34522,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"showName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-123'>Properties</h3>
+</span></code></pre></div><h3 id='properties-122'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35228,7 +34580,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User creation object</p>
-<h3 id='properties-124'>Properties</h3>
+<h3 id='properties-123'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35315,7 +34667,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User modification object</p>
-<h3 id='properties-125'>Properties</h3>
+<h3 id='properties-124'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35386,7 +34738,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for parameter</p>
-<h3 id='properties-126'>Properties</h3>
+<h3 id='properties-125'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35441,7 +34793,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for parameter</p>
-<h3 id='properties-127'>Properties</h3>
+<h3 id='properties-126'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35487,7 +34839,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive group</p>
-<h3 id='properties-128'>Properties</h3>
+<h3 id='properties-127'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35555,7 +34907,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response simple object for user</p>
-<h3 id='properties-129'>Properties</h3>
+<h3 id='properties-128'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35642,7 +34994,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Group creation object</p>
-<h3 id='properties-130'>Properties</h3>
+<h3 id='properties-129'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35702,7 +35054,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Group modification object</p>
-<h3 id='properties-131'>Properties</h3>
+<h3 id='properties-130'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35771,7 +35123,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive role</p>
-<h3 id='properties-132'>Properties</h3>
+<h3 id='properties-131'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
