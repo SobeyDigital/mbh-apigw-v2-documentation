@@ -293,7 +293,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">Shell</a>
               <a href="#" data-language-name="http">HTTP</a>
@@ -323,6 +323,12 @@
                   </li>
                   <li>
                     <a href="#re-generate-the-authentication-token" class="toc-h2 toc-link" data-title="Re-generate the authentication token">Re-generate the authentication token</a>
+                  </li>
+                  <li>
+                    <a href="#get__api_v2_authentication_otp" class="toc-h2 toc-link" data-title="get__api_v2_authentication_otp">get__api_v2_authentication_otp</a>
+                  </li>
+                  <li>
+                    <a href="#post__api_v2_authentication_otp" class="toc-h2 toc-link" data-title="post__api_v2_authentication_otp">post__api_v2_authentication_otp</a>
                   </li>
               </ul>
           </li>
@@ -393,6 +399,9 @@
                   <li>
                     <a href="#export-a-specified-material-to-the-exporting-site" class="toc-h2 toc-link" data-title="Export a specified material to the exporting site">Export a specified material to the exporting site</a>
                   </li>
+                  <li>
+                    <a href="#create-a-keyframe-from-a-material" class="toc-h2 toc-link" data-title="Create a keyframe from a material">Create a keyframe from a material</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -429,6 +438,9 @@
                     <a href="#get-the-media-standard-by-id" class="toc-h2 toc-link" data-title="Get the media standard by ID">Get the media standard by ID</a>
                   </li>
                   <li>
+                    <a href="#post__api_v2_metadata_collection-pool_link" class="toc-h2 toc-link" data-title="post__api_v2_metadata_collection-pool_link">post__api_v2_metadata_collection-pool_link</a>
+                  </li>
+                  <li>
                     <a href="#set-permission-to-a-material" class="toc-h2 toc-link" data-title="Set permission to a material">Set permission to a material</a>
                   </li>
                   <li>
@@ -445,6 +457,9 @@
                   </li>
                   <li>
                     <a href="#update-folder" class="toc-h2 toc-link" data-title="Update folder">Update folder</a>
+                  </li>
+                  <li>
+                    <a href="#create-folder-with-recursive-path" class="toc-h2 toc-link" data-title="Create folder with recursive path">Create folder with recursive path</a>
                   </li>
                   <li>
                     <a href="#set-permission-to-a-folder" class="toc-h2 toc-link" data-title="Set permission to a folder">Set permission to a folder</a>
@@ -646,6 +661,9 @@
                     <a href="#tocS_AuthenticationModel" class="toc-h2 toc-link" data-title="AuthenticationModel">AuthenticationModel</a>
                   </li>
                   <li>
+                    <a href="#tocS_OtpCreationModel" class="toc-h2 toc-link" data-title="OtpCreationModel">OtpCreationModel</a>
+                  </li>
+                  <li>
                     <a href="#tocS_ResolutionType" class="toc-h2 toc-link" data-title="ResolutionType">ResolutionType</a>
                   </li>
                   <li>
@@ -805,6 +823,9 @@
                     <a href="#tocS_ExportTaskResponseModel" class="toc-h2 toc-link" data-title="ExportTaskResponseModel">ExportTaskResponseModel</a>
                   </li>
                   <li>
+                    <a href="#tocS_KeyframeCreationModel" class="toc-h2 toc-link" data-title="KeyframeCreationModel">KeyframeCreationModel</a>
+                  </li>
+                  <li>
                     <a href="#tocS_DeletionRejectReasonResponseModel" class="toc-h2 toc-link" data-title="DeletionRejectReasonResponseModel">DeletionRejectReasonResponseModel</a>
                   </li>
                   <li>
@@ -838,6 +859,9 @@
                     <a href="#tocS_ResouceLockingResponseModel" class="toc-h2 toc-link" data-title="ResouceLockingResponseModel">ResouceLockingResponseModel</a>
                   </li>
                   <li>
+                    <a href="#tocS_CPLinkCreationModel" class="toc-h2 toc-link" data-title="CPLinkCreationModel">CPLinkCreationModel</a>
+                  </li>
+                  <li>
                     <a href="#tocS_MaterialPermissionRequestModel" class="toc-h2 toc-link" data-title="MaterialPermissionRequestModel">MaterialPermissionRequestModel</a>
                   </li>
                   <li>
@@ -851,6 +875,9 @@
                   </li>
                   <li>
                     <a href="#tocS_FolderModificationModel" class="toc-h2 toc-link" data-title="FolderModificationModel">FolderModificationModel</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_FolderRecursivelyCreateModel" class="toc-h2 toc-link" data-title="FolderRecursivelyCreateModel">FolderRecursivelyCreateModel</a>
                   </li>
                   <li>
                     <a href="#tocS_FolderPermissionRequestModel" class="toc-h2 toc-link" data-title="FolderPermissionRequestModel">FolderPermissionRequestModel</a>
@@ -1047,11 +1074,13 @@
         <!-- Generator: Widdershins v4.0.1 -->
 
 <h1 id="media-backbone-hive-api-gateway">Media Backbone Hive - API Gateway v2</h1>
+
 <ul>
   <li>Postman collection download: 
     <a href="https://raw.githubusercontent.com/SobeyDigital/mbh-apigw-v2-documentation/master/API%20Gateway.postman_collection.json" target="_blank">API Gateway.postman_collection.json</a>
   </li>
 </ul>
+
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
 </blockquote>
@@ -1411,6 +1440,312 @@ curl <span class="nt">-X</span> GET /api/v2/authentication/token <span class="se
 <tr>
 <td>401: Unauthorized</td>
 <td>Access is denied due to token is invalid or expired</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id='get__api_v2_authentication_otp'>get__api_v2_authentication_otp</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> GET /api/v2/authentication/otp <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/authentication/otp</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/authentication/otp</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'/api/v2/authentication/otp'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/api/v2/authentication/otp'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="s1">'/api/v2/authentication/otp'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/authentication/otp"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+       <span class="s">"bytes"</span>
+       <span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"GET"</span><span class="p">,</span> <span class="s">"/api/v2/authentication/otp"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
+
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p><code>GET /api/v2/authentication/otp</code></p>
+
+<h3 id="get__api_v2_authentication_otp-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id='post__api_v2_authentication_otp'>post__api_v2_authentication_otp</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST /api/v2/authentication/otp <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/authentication/otp</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+Content-Type: application/json-patch+json
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "token": "string"
+}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/authentication/otp</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'/api/v2/authentication/otp'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/api/v2/authentication/otp'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/api/v2/authentication/otp'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/authentication/otp"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+       <span class="s">"bytes"</span>
+       <span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
+        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/api/v2/authentication/otp"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
+
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p><code>POST /api/v2/authentication/otp</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="post__api_v2_authentication_otp-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaotpcreationmodel">OtpCreationModel</a></td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» token</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="post__api_v2_authentication_otp-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -2235,7 +2570,7 @@ Accept: text/plain
 <td>body</td>
 <td>integer(int64)</td>
 <td>true</td>
-<td>Channel ID</td>
+<td>Channel ID, pass &quot;-1&quot; means choosing an available channel automatic.</td>
 </tr>
 <tr>
 <td>» signalId</td>
@@ -2924,7 +3259,7 @@ Accept: text/plain
 <td>body</td>
 <td>integer(int64)</td>
 <td>false</td>
-<td>Channel ID</td>
+<td>Channel ID, pass &quot;-1&quot; means choosing an available channel automatic.</td>
 </tr>
 <tr>
 <td>» signalId</td>
@@ -5026,12 +5361,14 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","type":"Video","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","type":"Video","originalSourceId":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -5044,7 +5381,6 @@ Accept: text/plain
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -5486,6 +5822,10 @@ Content-Type: application/json-patch+json
 <tr>
 <td>» materialType</td>
 <td>Other</td>
+</tr>
+<tr>
+<td>» materialType</td>
+<td>Link</td>
 </tr>
 </tbody></table>
 
@@ -6625,6 +6965,236 @@ Accept: text/plain
 <td>None</td>
 </tr>
 <tr>
+<td>400: NullFrameRate</td>
+<td>The clip file does not have frame rate</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400: InvalidInOutPointPosition</td>
+<td>The In/Out point position must be greater than 0 and less than the total frames of the material</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id='create-a-keyframe-from-a-material'>Create a keyframe from a material</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> PATCH /api/v2/io/keyframe/material<span class="o">(</span><span class="s1">'{materialId}'</span><span class="o">)</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">PATCH</span> <span class="nn">/api/v2/io/keyframe/material('{materialId}')</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+Content-Type: application/json-patch+json
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "keyframeNo": 0,
+  "height": 0,
+  "width": 0
+}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/io/keyframe/material(</span><span class="dl">'</span><span class="p">{</span><span class="nx">materialId</span><span class="p">}</span><span class="dl">'</span><span class="s1">)</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">PATCH</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">patch</span> <span class="s1">'/api/v2/io/keyframe/material('</span><span class="p">{</span><span class="n">materialId</span><span class="p">}</span><span class="s1">')'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">patch</span><span class="p">(</span><span class="s">'/api/v2/io/keyframe/material('</span><span class="p">{</span><span class="n">materialId</span><span class="p">}</span><span class="s">')'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'PATCH'</span><span class="p">,</span><span class="s1">'/api/v2/io/keyframe/material('</span><span class="p">{</span><span class="nx">materialId</span><span class="p">}</span><span class="s1">')'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/io/keyframe/material('{materialId}')"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"PATCH"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+       <span class="s">"bytes"</span>
+       <span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
+        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"PATCH"</span><span class="p">,</span> <span class="s">"/api/v2/io/keyframe/material('{materialId}')"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
+
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p><code>PATCH /api/v2/io/keyframe/material(&#39;{materialId}&#39;)</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"keyframeNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-a-keyframe-from-a-material-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>materialId</td>
+<td>path</td>
+<td>string</td>
+<td>true</td>
+<td>The material&#39;s ID</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemakeyframecreationmodel">KeyframeCreationModel</a></td>
+<td>false</td>
+<td>Request object</td>
+</tr>
+<tr>
+<td>» keyframeNo</td>
+<td>body</td>
+<td>integer(int32)</td>
+<td>true</td>
+<td>Keyframe number</td>
+</tr>
+<tr>
+<td>» height</td>
+<td>body</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Keyframe&#39;s height, default is 180px</td>
+</tr>
+<tr>
+<td>» width</td>
+<td>body</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Keyframe&#39;s width, default is 320px</td>
+</tr>
+</tbody></table>
+
+<h3 id="create-a-keyframe-from-a-material-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400: MaterialNotFound</td>
+<td>Specified material doesn&#39;t exist</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400: NotSupportMaterialType</td>
+<td>The type of material does not support to be exported</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400: NullDuration</td>
+<td>The clip file of material does not have duration</td>
+<td>None</td>
+</tr>
+<tr>
+<td>400: NullFrameRate</td>
+<td>The clip file does not have frame rate</td>
+<td>None</td>
+</tr>
+<tr>
 <td>400: InvalidInOutPointPosition</td>
 <td>The In/Out point position must be greater than 0 and less than the total frames of the material</td>
 <td>None</td>
@@ -6788,12 +7358,14 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","type":"Video","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","type":"Video","originalSourceId":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -6806,7 +7378,6 @@ Accept: text/plain
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -8681,6 +9252,10 @@ Accept: text/plain
 <td>Other</td>
 </tr>
 <tr>
+<td>» type</td>
+<td>Link</td>
+</tr>
+<tr>
 <td>»»» fieldSequence</td>
 <td>OriginalWay</td>
 </tr>
@@ -8699,12 +9274,14 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","type":"Video","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","type":"Video","originalSourceId":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -8717,7 +9294,6 @@ Accept: text/plain
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -9915,12 +10491,14 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","type":"Video","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","type":"Video","originalSourceId":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -9933,7 +10511,6 @@ Accept: text/plain
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -10895,6 +11472,190 @@ curl <span class="nt">-X</span> GET /api/v2/metadata/media-standard<span class="
 <td>None</td>
 </tr>
 </tbody></table>
+<h2 id='post__api_v2_metadata_collection-pool_link'>post__api_v2_metadata_collection-pool_link</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST /api/v2/metadata/collection-pool/link <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/metadata/collection-pool/link</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+Content-Type: application/json-patch+json
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "folderId": "string",
+  "materialId": "string"
+}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/metadata/collection-pool/link</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'/api/v2/metadata/collection-pool/link'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/api/v2/metadata/collection-pool/link'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/api/v2/metadata/collection-pool/link'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/metadata/collection-pool/link"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+       <span class="s">"bytes"</span>
+       <span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
+        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/api/v2/metadata/collection-pool/link"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
+
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p><code>POST /api/v2/metadata/collection-pool/link</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="post__api_v2_metadata_collection-pool_link-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemacplinkcreationmodel">CPLinkCreationModel</a></td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» folderId</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» materialId</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="post__api_v2_metadata_collection-pool_link-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+<td>None</td>
+</tr>
+</tbody></table>
 <h2 id='set-permission-to-a-material'>Set permission to a material</h2>
 <blockquote>
 <p>Code samples</p>
@@ -11131,12 +11892,14 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","type":"Video","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","name":"string","folderId":"string","path":"string","type":"Video","originalSourceId":"string","size":0,"itemName":"string","journalist":"string","category":"string","programName":"string","isArchived":true,"isArchivedTo3rd":true,"deleteProtection":true,"isCapturing":true,"materialId":"string","rights":"string","comments":"string","duration":0,"frameRate":0,"subtype":"string","pendingToDelete":true,"imageType":"string","createTime":"2019-08-24T14:15:22Z","createUser":"string","modifyTime":"2019-08-24T14:15:22Z","modifyUser":"string","modifyHost":"string","genealogy":{},"acl":{"type":"Public","owner":"string","permission":{"read":["string"],"readWrite":["string"]}},"virtualTrimIn":0,"metadata":{"acquisition":{"exposureMode":"string","exposureIndex":"string","focusMode":"string","focusPosition":"string","shutterSpeed":"string","masterGain":"string","iso":"string","whiteBalance":"string","masterBlack":"string","gamma":"string","irisFNumber":"string","gps":"string","rawData":"string","deviceManufacturer":"string","deviceModel":"string","deviceSerialNumber":"string"},"planning":{"name":"string","place":"string","planningDate":"2019-08-24T14:15:22Z","director":"string","inputBy":"string","photographer":"string","reporter":"string","others":"string","equipment":"string","contactInfo":"string","inputSource":"string"},"filling":{"inputSource":"string","channelName":"string","deviceId":"string","audioChannelQuantity":0,"sof":0,"eof":0,"totalDuration":0,"som":0,"eom":0,"materialDuration":0,"streamChannel":0,"sourceTapeBarcode":"string","sourceTapeTitle":"string","backupTapeTitle":"string","startTime":"2019-08-24T14:15:22Z","endTime":"2019-08-24T14:15:22Z","filedFrom":"string","filedBy":"string"},"original":{"fieldSequence":"OriginalWay","userMediaId":"string","mainTitle":"string","comments":"string","clipTitle":"string","createdBy":"string","recordingDate":"2019-08-24T14:15:22Z","duration":0,"stc":0,"videoFormat":"string","audioFormat":"string","description":"string","umid":"string","basicUMID":"string"},"audioTrackInfo":[{"language":"string","track":0,"type":"string"}],"extraFilling":{"videoSampling":"string","aspectRatio":"string","dataRate":"string","wrapper":"string","videoCompression":"string","gop":"string","frameRate":"string","formatId":"string","audioCompression":"string","audioQuantization":"string","videoColorSpace":"string"}},"customMetadata":{"property1":{},"property2":{}},"fileGroups":[{"id":"string","groupName":"string","status":"string","files":[{"fileId":"string","size":0,"duration":0,"createTime":"2019-08-24T14:15:22Z","path":"string","format":{"audio":{"streams":0,"bitsPerSample":0,"channels":0,"in":0,"out":0,"sampleRate":0,"mediaStandardId":0},"video":{"bitRate":0,"bitsPerPixel":0,"frameRate":0,"height":0,"width":0,"in":0,"out":0,"mediaStandardId":0},"keyframe":{"height":0,"width":0,"position":0},"picture":{"height":0,"width":0}}}],"specification":{"tracks":[{"channelId":0,"trackId":"string","fileId":"string","in":0,"out":0,"refIn":0,"refOut":0}]}}]}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -11149,7 +11912,6 @@ Accept: text/plain
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -12510,6 +13272,181 @@ Accept: text/plain
 <tr>
 <td>404: FolderMoveFailed</td>
 <td>It&#39;s not allowed to move a folder to the collection pool</td>
+<td>None</td>
+</tr>
+</tbody></table>
+<h2 id='create-folder-with-recursive-path'>Create folder with recursive path</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST /api/v2/metadata/folder/recursive <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/json-patch+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">/api/v2/metadata/folder/recursive</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+
+Content-Type: application/json-patch+json
+
+</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">inputBody</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{
+  "destination": "string"
+}</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">application/json-patch+json</span><span class="dl">'</span><span class="p">,</span>
+  <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
+<span class="p">};</span>
+
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/metadata/folder/recursive</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">{</span>
+  <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">POST</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">body</span><span class="p">:</span> <span class="nx">inputBody</span><span class="p">,</span>
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span>
+<span class="p">})</span>
+<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">body</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">body</span><span class="p">);</span>
+<span class="p">});</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'/api/v2/metadata/folder/recursive'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/json-patch+json'</span><span class="p">,</span>
+  <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'/api/v2/metadata/folder/recursive'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight php tab-php"><code><span class="cp">&lt;?php</span>
+
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$headers</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/json-patch+json'</span><span class="p">,</span>
+    <span class="s1">'Basic Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'API_KEY'</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\GuzzleHttp\Client</span><span class="p">();</span>
+
+<span class="c1">// Define array of request body.</span>
+<span class="nv">$request_body</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">'POST'</span><span class="p">,</span><span class="s1">'/api/v2/metadata/folder/recursive'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">'headers'</span> <span class="o">=&gt;</span> <span class="nv">$headers</span><span class="p">,</span>
+        <span class="s1">'json'</span> <span class="o">=&gt;</span> <span class="nv">$request_body</span><span class="p">,</span>
+       <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">());</span>
+ <span class="p">}</span>
+ <span class="k">catch</span> <span class="p">(</span><span class="nx">\GuzzleHttp\Exception\BadResponseException</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// handle exception or api errors.</span>
+    <span class="nb">print_r</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
+ <span class="p">}</span>
+
+ <span class="c1">// ...</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/metadata/folder/recursive"</span><span class="o">);</span>
+<span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+<span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+<span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+<span class="nc">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+    <span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()));</span>
+<span class="nc">String</span> <span class="n">inputLine</span><span class="o">;</span>
+<span class="nc">StringBuffer</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span><span class="o">();</span>
+<span class="k">while</span> <span class="o">((</span><span class="n">inputLine</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">inputLine</span><span class="o">);</span>
+<span class="o">}</span>
+<span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight go tab-go"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+       <span class="s">"bytes"</span>
+       <span class="s">"net/http"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="n">headers</span> <span class="o">:=</span> <span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">string</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"application/json-patch+json"</span><span class="p">},</span>
+        <span class="s">"Basic Authorization"</span><span class="o">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">"API_KEY"</span><span class="p">},</span>
+    <span class="p">}</span>
+
+    <span class="n">data</span> <span class="o">:=</span> <span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="n">jsonReq</span><span class="p">})</span>
+    <span class="n">req</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="s">"POST"</span><span class="p">,</span> <span class="s">"/api/v2/metadata/folder/recursive"</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">Header</span> <span class="o">=</span> <span class="n">headers</span>
+
+    <span class="n">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="p">{}</span>
+    <span class="n">resp</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+    <span class="c">// ...</span>
+<span class="p">}</span>
+
+</code></pre></div>
+<p><code>POST /api/v2/metadata/folder/recursive</code></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="create-folder-with-recursive-path-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemafolderrecursivelycreatemodel">FolderRecursivelyCreateModel</a></td>
+<td>false</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» destination</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Complete folder path</td>
+</tr>
+</tbody></table>
+
+<h3 id="create-folder-with-recursive-path-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
 <td>None</td>
 </tr>
 </tbody></table>
@@ -16941,7 +17878,7 @@ Accept: text/plain
   "equipment": "string",
   "contactInfo": "string",
   "inputSource": "string",
-  "sourceType": "SDI",
+  "sourceType": "ALL",
   "metadata": {
     "rights": "string",
     "comments": "string",
@@ -17086,7 +18023,7 @@ Accept: text/plain
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -17295,6 +18232,10 @@ Accept: text/plain
 </thead><tbody>
 <tr>
 <td>» sourceType</td>
+<td>ALL</td>
+</tr>
+<tr>
+<td>» sourceType</td>
 <td>SDI</td>
 </tr>
 <tr>
@@ -17316,7 +18257,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"SDI","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"ALL","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -17335,7 +18276,7 @@ Accept: text/plain
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -17754,7 +18695,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"SDI","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"ALL","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -17773,7 +18714,7 @@ Accept: text/plain
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -18121,7 +19062,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"SDI","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
+<div class="highlight"><pre class="highlight plaintext"><code>{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"ALL","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -18140,7 +19081,7 @@ Accept: text/plain
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -18178,11 +19119,11 @@ Accept: text/plain
 <p>Code samples</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> GET /api/v2/planning/plannings <span class="se">\</span>
+curl <span class="nt">-X</span> GET /api/v2/planning/plannings?startDate<span class="o">=</span>2019-08-24T14%3A15%3A22Z&amp;endDate<span class="o">=</span>2019-08-24T14%3A15%3A22Z <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Accept: text/plain'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Basic Authorization: API_KEY'</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/planning/plannings</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</code></pre></div><div class="highlight"><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">/api/v2/planning/plannings?startDate=2019-08-24T14%3A15%3A22Z&amp;endDate=2019-08-24T14%3A15%3A22Z</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 
 Accept: text/plain
 
@@ -18192,7 +19133,7 @@ Accept: text/plain
   <span class="dl">'</span><span class="s1">Basic Authorization</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">API_KEY</span><span class="dl">'</span>
 <span class="p">};</span>
 
-<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/planning/plannings</span><span class="dl">'</span><span class="p">,</span>
+<span class="nx">fetch</span><span class="p">(</span><span class="dl">'</span><span class="s1">/api/v2/planning/plannings?startDate=2019-08-24T14%3A15%3A22Z&amp;endDate=2019-08-24T14%3A15%3A22Z</span><span class="dl">'</span><span class="p">,</span>
 <span class="p">{</span>
   <span class="na">method</span><span class="p">:</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">,</span>
 
@@ -18214,7 +19155,9 @@ Accept: text/plain
 
 <span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">get</span> <span class="s1">'/api/v2/planning/plannings'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
-  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+  <span class="s1">'startDate'</span> <span class="o">=&gt;</span> <span class="s1">'string(date-time)'</span><span class="p">,</span>
+<span class="s1">'endDate'</span> <span class="o">=&gt;</span> <span class="s1">'string(date-time)'</span>
+<span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
 <span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
@@ -18224,7 +19167,9 @@ Accept: text/plain
   <span class="s">'Basic Authorization'</span><span class="p">:</span> <span class="s">'API_KEY'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/api/v2/planning/plannings'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'/api/v2/planning/plannings'</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+  <span class="s">'startDate'</span><span class="p">:</span> <span class="s">'2019-08-24T14:15:22Z'</span><span class="p">,</span>  <span class="s">'endDate'</span><span class="p">:</span> <span class="s">'2019-08-24T14:15:22Z'</span>
+<span class="p">},</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
@@ -18257,7 +19202,7 @@ Accept: text/plain
 
  <span class="c1">// ...</span>
 
-</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/planning/plannings"</span><span class="o">);</span>
+</code></pre></div><div class="highlight"><pre class="highlight java tab-java"><code><span class="no">URL</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="s">"/api/v2/planning/plannings?startDate=2019-08-24T14%3A15%3A22Z&amp;endDate=2019-08-24T14%3A15%3A22Z"</span><span class="o">);</span>
 <span class="nc">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpURLConnection</span><span class="o">)</span> <span class="n">obj</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
 <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"GET"</span><span class="o">);</span>
 <span class="kt">int</span> <span class="n">responseCode</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
@@ -18313,7 +19258,35 @@ Accept: text/plain
 <td>query</td>
 <td>integer(int32)</td>
 <td>false</td>
-<td>Page index for pagination, default is &quot;0&quot;, starts with &quot;0&quot;</td>
+<td>Page&#39;s index, default value is 10</td>
+</tr>
+<tr>
+<td>size</td>
+<td>query</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>Page&#39;s size, default value is 1</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>query</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>Start time</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>query</td>
+<td>string(date-time)</td>
+<td>true</td>
+<td>End Time</td>
+</tr>
+<tr>
+<td>type</td>
+<td>query</td>
+<td>string</td>
+<td>false</td>
+<td>Planning&#39;s source type default is null and will return all types of plannings. The &quot;File&quot; type will include &quot;File&quot; and &quot;All&quot; types planning, &quot;SDI&quot; type will include &quot;SDI&quot; and &quot;All&quot; types planning</td>
 </tr>
 </tbody></table>
 
@@ -18322,7 +19295,7 @@ Accept: text/plain
 
 <p>200 Response</p>
 </blockquote>
-<div class="highlight"><pre class="highlight plaintext"><code>{"result":[{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"SDI","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}],"page":0,"size":0,"totalCount":0,"totalPage":0,"elapsed":0}
+<div class="highlight"><pre class="highlight plaintext"><code>{"result":[{"id":"string","folderId":"string","planningName":"string","inputBy":"string","place":"string","planningDate":"string","startDate":"string","endDate":"string","createDate":"string","modifyDate":"string","director":"string","photographer":"string","reporter":"string","otherEngineer":"string","equipment":"string","contactInfo":"string","inputSource":"string","sourceType":"ALL","metadata":{"rights":"string","comments":"string","itemName":"string","journalist":"string","category":"string","programName":"string","tapeBarcode":"string","tapeTitle":"string"}}],"page":0,"size":0,"totalCount":0,"totalPage":0,"elapsed":0}
 </code></pre></div><div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -18343,7 +19316,7 @@ Accept: text/plain
       </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -19731,6 +20704,10 @@ The subscription also provides Kafka queue for high-performance application, all
 <tr>
 <td>» events</td>
 <td>MarkerUpdated</td>
+</tr>
+<tr>
+<td>» events</td>
+<td>KeyframeUpdated</td>
 </tr>
 <tr>
 <td>» events</td>
@@ -24919,6 +25896,37 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_OtpCreationModel">OtpCreationModel</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemaotpcreationmodel"></a>
+<a id="schema_OtpCreationModel"></a>
+<a id="tocSotpcreationmodel"></a>
+<a id="tocsotpcreationmodel"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-2'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_ResolutionType">ResolutionType</h2>
 
 <!-- backwards compatibility -->
@@ -24931,7 +25939,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>EDL resolution</p>
-<h3 id='properties-2'>Properties</h3>
+<h3 id='properties-3'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -24978,7 +25986,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>EDL frame rate</p>
-<h3 id='properties-3'>Properties</h3>
+<h3 id='properties-4'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25041,7 +26049,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>EDL scale</p>
-<h3 id='properties-4'>Properties</h3>
+<h3 id='properties-5'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25096,7 +26104,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Tracks setting, default is 2 graphic tracks, 1 video track, and 4 audio tracks</p>
-<h3 id='properties-5'>Properties</h3>
+<h3 id='properties-6'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25152,7 +26160,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>EDL creation object</p>
-<h3 id='properties-6'>Properties</h3>
+<h3 id='properties-7'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25220,7 +26228,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for EDL creation</p>
-<h3 id='properties-7'>Properties</h3>
+<h3 id='properties-8'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25255,7 +26263,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Request object is used to EDL render</p>
-<h3 id='properties-8'>Properties</h3>
+<h3 id='properties-9'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25302,7 +26310,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for EDL rendering task</p>
-<h3 id='properties-9'>Properties</h3>
+<h3 id='properties-10'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25333,7 +26341,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingestion task&#39;s type</p>
-<h3 id='properties-10'>Properties</h3>
+<h3 id='properties-11'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25399,7 +26407,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingest tast&#39;s metadata object</p>
-<h3 id='properties-11'>Properties</h3>
+<h3 id='properties-12'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25472,7 +26480,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The parameters of periodic ingestion task</p>
-<h3 id='properties-12'>Properties</h3>
+<h3 id='properties-13'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25548,7 +26556,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingest creation model</p>
-<h3 id='properties-13'>Properties</h3>
+<h3 id='properties-14'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25577,7 +26585,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>integer(int64)</td>
 <td>true</td>
 <td>none</td>
-<td>Channel ID</td>
+<td>Channel ID, pass &quot;-1&quot; means choosing an available channel automatic.</td>
 </tr>
 <tr>
 <td>signalId</td>
@@ -25635,7 +26643,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingestion task&#39;s status</p>
-<h3 id='properties-14'>Properties</h3>
+<h3 id='properties-15'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25730,7 +26738,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingest response object</p>
-<h3 id='properties-15'>Properties</h3>
+<h3 id='properties-16'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25861,7 +26869,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Ingest modification model</p>
-<h3 id='properties-16'>Properties</h3>
+<h3 id='properties-17'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25897,7 +26905,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>integer(int64)</td>
 <td>false</td>
 <td>none</td>
-<td>Channel ID</td>
+<td>Channel ID, pass &quot;-1&quot; means choosing an available channel automatic.</td>
 </tr>
 <tr>
 <td>signalId</td>
@@ -25944,7 +26952,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Channel object</p>
-<h3 id='properties-17'>Properties</h3>
+<h3 id='properties-18'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -25985,7 +26993,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Signal object</p>
-<h3 id='properties-18'>Properties</h3>
+<h3 id='properties-19'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26026,7 +27034,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Request to initiate an upload job</p>
-<h3 id='properties-19'>Properties</h3>
+<h3 id='properties-20'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26066,7 +27074,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for upload initialization</p>
-<h3 id='properties-20'>Properties</h3>
+<h3 id='properties-21'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26105,7 +27113,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for file&#39;s chunk upload</p>
-<h3 id='properties-21'>Properties</h3>
+<h3 id='properties-22'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26164,7 +27172,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Supported types of material</p>
-<h3 id='properties-22'>Properties</h3>
+<h3 id='properties-23'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26213,6 +27221,10 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td><em>anonymous</em></td>
 <td>Other</td>
 </tr>
+<tr>
+<td><em>anonymous</em></td>
+<td>Link</td>
+</tr>
 </tbody></table>
 
 <h2 id="tocS_GenealogyModel">GenealogyModel</h2>
@@ -26227,7 +27239,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>General metadata of material</p>
-<h3 id='properties-23'>Properties</h3>
+<h3 id='properties-24'>Properties</h3>
 <p><em>None</em></p>
 
 <h2 id="tocS_PermissionTypes">PermissionTypes</h2>
@@ -26242,7 +27254,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Permission types</p>
-<h3 id='properties-24'>Properties</h3>
+<h3 id='properties-25'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26300,7 +27312,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Material permission request model</p>
-<h3 id='properties-25'>Properties</h3>
+<h3 id='properties-26'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26349,7 +27361,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Description of material&#39;s ACL</p>
-<h3 id='properties-26'>Properties</h3>
+<h3 id='properties-27'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26411,7 +27423,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Acquisition metadata</p>
-<h3 id='properties-27'>Properties</h3>
+<h3 id='properties-28'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26559,7 +27571,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Planning metadata of material</p>
-<h3 id='properties-28'>Properties</h3>
+<h3 id='properties-29'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26679,7 +27691,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Filling (ingest) metadata of material</p>
-<h3 id='properties-29'>Properties</h3>
+<h3 id='properties-30'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26829,7 +27841,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Export content types</p>
-<h3 id='properties-30'>Properties</h3>
+<h3 id='properties-31'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -26895,7 +27907,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Original metadata of material</p>
-<h3 id='properties-31'>Properties</h3>
+<h3 id='properties-32'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27021,7 +28033,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Audio track information</p>
-<h3 id='properties-32'>Properties</h3>
+<h3 id='properties-33'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27078,7 +28090,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Extra filling (ingest) metadata of material</p>
-<h3 id='properties-33'>Properties</h3>
+<h3 id='properties-34'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27267,7 +28279,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>General metadata of material</p>
-<h3 id='properties-34'>Properties</h3>
+<h3 id='properties-35'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27339,7 +28351,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"mediaStandardId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-35'>Properties</h3>
+</span></code></pre></div><h3 id='properties-36'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27419,7 +28431,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"mediaStandardId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-36'>Properties</h3>
+</span></code></pre></div><h3 id='properties-37'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27501,7 +28513,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-37'>Properties</h3>
+</span></code></pre></div><h3 id='properties-38'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27547,7 +28559,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-38'>Properties</h3>
+</span></code></pre></div><h3 id='properties-39'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27612,7 +28624,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-39'>Properties</h3>
+</span></code></pre></div><h3 id='properties-40'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27698,7 +28710,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-40'>Properties</h3>
+</span></code></pre></div><h3 id='properties-41'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27770,7 +28782,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"refOut"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-41'>Properties</h3>
+</span></code></pre></div><h3 id='properties-42'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27853,7 +28865,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-42'>Properties</h3>
+</span></code></pre></div><h3 id='properties-43'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -27940,7 +28952,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>File group model</p>
-<h3 id='properties-43'>Properties</h3>
+<h3 id='properties-44'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28000,6 +29012,8 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"originalSourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"itemName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"journalist"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -28012,7 +29026,6 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Video"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"frameRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"subtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -28193,7 +29206,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for material</p>
-<h3 id='properties-44'>Properties</h3>
+<h3 id='properties-45'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28230,6 +29243,20 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>false</td>
 <td>none</td>
 <td>Folder path</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#schemamaterialtypes">MaterialTypes</a></td>
+<td>false</td>
+<td>none</td>
+<td>Supported types of material</td>
+</tr>
+<tr>
+<td>originalSourceId</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
 </tr>
 <tr>
 <td>size</td>
@@ -28314,13 +29341,6 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <td>false</td>
 <td>none</td>
 <td>Comments of material</td>
-</tr>
-<tr>
-<td>type</td>
-<td><a href="#schemamaterialtypes">MaterialTypes</a></td>
-<td>false</td>
-<td>none</td>
-<td>Supported types of material</td>
 </tr>
 <tr>
 <td>duration</td>
@@ -28464,7 +29484,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Import file to Hive</p>
-<h3 id='properties-45'>Properties</h3>
+<h3 id='properties-46'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28530,7 +29550,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Material file groups</p>
-<h3 id='properties-46'>Properties</h3>
+<h3 id='properties-47'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28577,7 +29597,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Attach additional file to material&#39;s file group</p>
-<h3 id='properties-47'>Properties</h3>
+<h3 id='properties-48'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28634,7 +29654,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for storage unit</p>
-<h3 id='properties-48'>Properties</h3>
+<h3 id='properties-49'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28707,7 +29727,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Export site mode</p>
-<h3 id='properties-49'>Properties</h3>
+<h3 id='properties-50'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28754,7 +29774,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Export content types</p>
-<h3 id='properties-50'>Properties</h3>
+<h3 id='properties-51'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28809,7 +29829,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Export policy</p>
-<h3 id='properties-51'>Properties</h3>
+<h3 id='properties-52'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28867,7 +29887,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for export site</p>
-<h3 id='properties-52'>Properties</h3>
+<h3 id='properties-53'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -28943,7 +29963,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Export material request object</p>
-<h3 id='properties-53'>Properties</h3>
+<h3 id='properties-54'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29020,7 +30040,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The response model of exporting task</p>
-<h3 id='properties-54'>Properties</h3>
+<h3 id='properties-55'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29053,6 +30073,55 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_KeyframeCreationModel">KeyframeCreationModel</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemakeyframecreationmodel"></a>
+<a id="schema_KeyframeCreationModel"></a>
+<a id="tocSkeyframecreationmodel"></a>
+<a id="tocskeyframecreationmodel"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"keyframeNo"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"width"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Create keyframe object</p>
+<h3 id='properties-56'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>keyframeNo</td>
+<td>integer(int32)</td>
+<td>true</td>
+<td>none</td>
+<td>Keyframe number</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>Keyframe&#39;s height, default is 180px</td>
+</tr>
+<tr>
+<td>width</td>
+<td>integer(int32)</td>
+<td>false</td>
+<td>none</td>
+<td>Keyframe&#39;s width, default is 320px</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_DeletionRejectReasonResponseModel">DeletionRejectReasonResponseModel</h2>
 
 <!-- backwards compatibility -->
@@ -29073,7 +30142,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for delete rejection reason</p>
-<h3 id='properties-55'>Properties</h3>
+<h3 id='properties-57'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29159,7 +30228,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for material deletion</p>
-<h3 id='properties-56'>Properties</h3>
+<h3 id='properties-58'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29197,7 +30266,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Sortable fields of material can be sorted</p>
-<h3 id='properties-57'>Properties</h3>
+<h3 id='properties-59'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29248,7 +30317,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Decides whether the result is in ascending or descending order</p>
-<h3 id='properties-58'>Properties</h3>
+<h3 id='properties-60'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29321,7 +30390,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Simple response object for material</p>
-<h3 id='properties-59'>Properties</h3>
+<h3 id='properties-61'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29478,7 +30547,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Pagination object</p>
-<h3 id='properties-60'>Properties</h3>
+<h3 id='properties-62'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29556,7 +30625,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Simple response object for custom field on material</p>
-<h3 id='properties-61'>Properties</h3>
+<h3 id='properties-63'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29718,7 +30787,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Creation model for general metadata part of material</p>
-<h3 id='properties-62'>Properties</h3>
+<h3 id='properties-64'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -29872,7 +30941,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Material creation object</p>
-<h3 id='properties-63'>Properties</h3>
+<h3 id='properties-65'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30110,7 +31179,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Material modification object</p>
-<h3 id='properties-64'>Properties</h3>
+<h3 id='properties-66'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30256,7 +31325,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Resouce locking response model</p>
-<h3 id='properties-65'>Properties</h3>
+<h3 id='properties-67'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30282,6 +31351,45 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_CPLinkCreationModel">CPLinkCreationModel</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemacplinkcreationmodel"></a>
+<a id="schema_CPLinkCreationModel"></a>
+<a id="tocScplinkcreationmodel"></a>
+<a id="tocscplinkcreationmodel"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"folderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"materialId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-68'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>folderId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>materialId</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_MaterialPermissionRequestModel">MaterialPermissionRequestModel</h2>
 
 <!-- backwards compatibility -->
@@ -30304,7 +31412,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Material permission request model</p>
-<h3 id='properties-66'>Properties</h3>
+<h3 id='properties-69'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30342,7 +31450,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Folder types</p>
-<h3 id='properties-67'>Properties</h3>
+<h3 id='properties-70'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30398,7 +31506,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for folder</p>
-<h3 id='properties-68'>Properties</h3>
+<h3 id='properties-71'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30482,7 +31590,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Folder creation object</p>
-<h3 id='properties-69'>Properties</h3>
+<h3 id='properties-72'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30531,7 +31639,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Folder modification object</p>
-<h3 id='properties-70'>Properties</h3>
+<h3 id='properties-73'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30564,6 +31672,39 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 </tbody></table>
 
+<h2 id="tocS_FolderRecursivelyCreateModel">FolderRecursivelyCreateModel</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemafolderrecursivelycreatemodel"></a>
+<a id="schema_FolderRecursivelyCreateModel"></a>
+<a id="tocSfolderrecursivelycreatemodel"></a>
+<a id="tocsfolderrecursivelycreatemodel"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<p>Folder recursive creation object</p>
+<h3 id='properties-74'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>destination</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>Complete folder path</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_FolderPermissionRequestModel">FolderPermissionRequestModel</h2>
 
 <!-- backwards compatibility -->
@@ -30587,7 +31728,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Folder permission request model</p>
-<h3 id='properties-71'>Properties</h3>
+<h3 id='properties-75'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30635,7 +31776,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Linkage creation object</p>
-<h3 id='properties-72'>Properties</h3>
+<h3 id='properties-76'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30678,7 +31819,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for linkage</p>
-<h3 id='properties-73'>Properties</h3>
+<h3 id='properties-77'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30733,7 +31874,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Linkage modification object</p>
-<h3 id='properties-74'>Properties</h3>
+<h3 id='properties-78'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30771,7 +31912,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Supported types of Marker</p>
-<h3 id='properties-75'>Properties</h3>
+<h3 id='properties-79'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30845,7 +31986,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for marker</p>
-<h3 id='properties-76'>Properties</h3>
+<h3 id='properties-80'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30955,7 +32096,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for clean markers request</p>
-<h3 id='properties-77'>Properties</h3>
+<h3 id='properties-81'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -30997,7 +32138,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Marker creation object</p>
-<h3 id='properties-78'>Properties</h3>
+<h3 id='properties-82'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31088,7 +32229,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Marker modification object</p>
-<h3 id='properties-79'>Properties</h3>
+<h3 id='properties-83'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31170,7 +32311,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-80'>Properties</h3>
+</span></code></pre></div><h3 id='properties-84'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31215,7 +32356,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Task execution status</p>
-<h3 id='properties-81'>Properties</h3>
+<h3 id='properties-85'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31270,7 +32411,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Sortable fields of task can be sorted</p>
-<h3 id='properties-82'>Properties</h3>
+<h3 id='properties-86'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31349,7 +32490,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for task</p>
-<h3 id='properties-83'>Properties</h3>
+<h3 id='properties-87'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31487,7 +32628,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for task searching</p>
-<h3 id='properties-84'>Properties</h3>
+<h3 id='properties-88'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31545,7 +32686,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for storage configuration</p>
-<h3 id='properties-85'>Properties</h3>
+<h3 id='properties-89'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31604,7 +32745,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The running status of foundation service</p>
-<h3 id='properties-86'>Properties</h3>
+<h3 id='properties-90'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31656,7 +32797,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The response model of service status on node</p>
-<h3 id='properties-87'>Properties</h3>
+<h3 id='properties-91'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31721,7 +32862,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The response model of service status</p>
-<h3 id='properties-88'>Properties</h3>
+<h3 id='properties-92'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31776,11 +32917,11 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <a id="schema_PlanningSourceType"></a>
 <a id="tocSplanningsourcetype"></a>
 <a id="tocsplanningsourcetype"></a></p>
-<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"SDI"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"ALL"</span><span class="w">
 
 </span></code></pre></div>
 <p>Options for planning&#39;s resource types</p>
-<h3 id='properties-89'>Properties</h3>
+<h3 id='properties-93'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31805,6 +32946,10 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <th>Value</th>
 </tr>
 </thead><tbody>
+<tr>
+<td><em>anonymous</em></td>
+<td>ALL</td>
+</tr>
 <tr>
 <td><em>anonymous</em></td>
 <td>SDI</td>
@@ -31844,7 +32989,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Planning&#39;s material metadata</p>
-<h3 id='properties-90'>Properties</h3>
+<h3 id='properties-94'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -31935,7 +33080,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -31950,7 +33095,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Planning creation object</p>
-<h3 id='properties-91'>Properties</h3>
+<h3 id='properties-95'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32100,7 +33245,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -32115,7 +33260,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Planning response object</p>
-<h3 id='properties-92'>Properties</h3>
+<h3 id='properties-96'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32298,7 +33443,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Planning modification object</p>
-<h3 id='properties-93'>Properties</h3>
+<h3 id='properties-97'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32450,7 +33595,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
       </span><span class="nl">"equipment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"contactInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"inputSource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SDI"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ALL"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"rights"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
         </span><span class="nl">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -32472,7 +33617,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Pagination object</p>
-<h3 id='properties-94'>Properties</h3>
+<h3 id='properties-98'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32545,7 +33690,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for rundown</p>
-<h3 id='properties-95'>Properties</h3>
+<h3 id='properties-99'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32611,7 +33756,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Story event status</p>
-<h3 id='properties-96'>Properties</h3>
+<h3 id='properties-100'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32704,7 +33849,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for story event</p>
-<h3 id='properties-97'>Properties</h3>
+<h3 id='properties-101'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32806,7 +33951,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for story</p>
-<h3 id='properties-98'>Properties</h3>
+<h3 id='properties-102'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32852,7 +33997,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response model for searchable field</p>
-<h3 id='properties-99'>Properties</h3>
+<h3 id='properties-103'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -32956,7 +34101,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response model for searchable field collection</p>
-<h3 id='properties-100'>Properties</h3>
+<h3 id='properties-104'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33008,7 +34153,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Boolean operators for fulltext search</p>
-<h3 id='properties-101'>Properties</h3>
+<h3 id='properties-105'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33063,7 +34208,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Field condition object</p>
-<h3 id='properties-102'>Properties</h3>
+<h3 id='properties-106'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33108,7 +34253,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Index repository names available for search</p>
-<h3 id='properties-103'>Properties</h3>
+<h3 id='properties-107'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33172,7 +34317,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Fulltext search request object</p>
-<h3 id='properties-104'>Properties</h3>
+<h3 id='properties-108'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33219,7 +34364,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Pagination object</p>
-<h3 id='properties-105'>Properties</h3>
+<h3 id='properties-109'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33285,7 +34430,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Available events for subscription</p>
-<h3 id='properties-106'>Properties</h3>
+<h3 id='properties-110'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33376,6 +34521,10 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 </tr>
 <tr>
 <td><em>anonymous</em></td>
+<td>KeyframeUpdated</td>
+</tr>
+<tr>
+<td><em>anonymous</em></td>
 <td>ImportStarted</td>
 </tr>
 <tr>
@@ -33417,7 +34566,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Subscription request object</p>
-<h3 id='properties-107'>Properties</h3>
+<h3 id='properties-111'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33461,7 +34610,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for event subscription</p>
-<h3 id='properties-108'>Properties</h3>
+<h3 id='properties-112'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33510,7 +34659,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>The notification operator object</p>
-<h3 id='properties-109'>Properties</h3>
+<h3 id='properties-113'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33564,7 +34713,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Notification wrapper</p>
-<h3 id='properties-110'>Properties</h3>
+<h3 id='properties-114'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33618,7 +34767,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Subscription testing object</p>
-<h3 id='properties-111'>Properties</h3>
+<h3 id='properties-115'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33647,7 +34796,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 <a id="tocshttpstatuscode"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"continue"</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-112'>Properties</h3>
+</span></code></pre></div><h3 id='properties-116'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -33954,7 +35103,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"errorMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-113'>Properties</h3>
+</span></code></pre></div><h3 id='properties-117'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34026,7 +35175,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-114'>Properties</h3>
+</span></code></pre></div><h3 id='properties-118'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34067,7 +35216,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for permission</p>
-<h3 id='properties-115'>Properties</h3>
+<h3 id='properties-119'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34108,7 +35257,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive group with simple structure</p>
-<h3 id='properties-116'>Properties</h3>
+<h3 id='properties-120'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34149,7 +35298,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Indicate weather inherited from other groups</p>
-<h3 id='properties-117'>Properties</h3>
+<h3 id='properties-121'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34194,7 +35343,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive role with simple structure</p>
-<h3 id='properties-118'>Properties</h3>
+<h3 id='properties-122'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34259,7 +35408,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for storage pool</p>
-<h3 id='properties-119'>Properties</h3>
+<h3 id='properties-123'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34318,7 +35467,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User&#39;s status</p>
-<h3 id='properties-120'>Properties</h3>
+<h3 id='properties-124'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34416,7 +35565,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for user</p>
-<h3 id='properties-121'>Properties</h3>
+<h3 id='properties-125'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34526,7 +35675,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
   </span><span class="nl">"showName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-122'>Properties</h3>
+</span></code></pre></div><h3 id='properties-126'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34584,7 +35733,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User creation object</p>
-<h3 id='properties-123'>Properties</h3>
+<h3 id='properties-127'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34671,7 +35820,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>User modification object</p>
-<h3 id='properties-124'>Properties</h3>
+<h3 id='properties-128'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34742,7 +35891,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for parameter</p>
-<h3 id='properties-125'>Properties</h3>
+<h3 id='properties-129'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34797,7 +35946,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for parameter</p>
-<h3 id='properties-126'>Properties</h3>
+<h3 id='properties-130'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34843,7 +35992,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive group</p>
-<h3 id='properties-127'>Properties</h3>
+<h3 id='properties-131'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34911,7 +36060,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response simple object for user</p>
-<h3 id='properties-128'>Properties</h3>
+<h3 id='properties-132'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -34998,7 +36147,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Group creation object</p>
-<h3 id='properties-129'>Properties</h3>
+<h3 id='properties-133'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35058,7 +36207,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Group modification object</p>
-<h3 id='properties-130'>Properties</h3>
+<h3 id='properties-134'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -35127,7 +36276,7 @@ curl <span class="nt">-X</span> DELETE /api/v2/system/role<span class="o">(</spa
 
 </span></code></pre></div>
 <p>Response object for Hive role</p>
-<h3 id='properties-131'>Properties</h3>
+<h3 id='properties-135'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
