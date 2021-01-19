@@ -14,7 +14,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d4eeed9f-42ef-4f2c-b75f-7684dbbec6b2",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -79,7 +78,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "30288b48-2ae5-44c6-ba68-917d78e4de64",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -144,7 +142,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "32e74b24-ef0e-4261-aadc-d55c1a02563a",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -178,7 +175,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b7d2b72b-37b7-499a-8a92-96ab677bebcc",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -256,7 +252,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f03f33bb-1d55-4d1c-a7e9-cfcd915a295e",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -307,7 +302,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2beaa719-7fd9-4217-bf8a-0f0d5891b250",
 								"exec": [
 									"pm.test(\"Status code is 400\", function () {",
 									"    pm.response.to.have.status(400);",
@@ -359,7 +353,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e6332259-56d5-4130-8686-7027c263e2f1",
 								"exec": [
 									"pm.test(\"Status code is 403\", function () {",
 									"    pm.response.to.have.status(403);",
@@ -410,7 +403,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cc79eeae-efac-4140-b57d-977f3f803188",
 								"exec": [
 									"pm.test(\"Status code is 403\", function () {",
 									"    pm.response.to.have.status(403);",
@@ -455,8 +447,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Authentication",
@@ -467,7 +458,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "758e19e2-0dc1-4c86-b0e8-6edd70558225",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"console.log(jsonData);",
@@ -522,10 +512,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"loginName\": \"wilson\",\n\t\"password\": \"123\"\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n\t\"loginName\": \"wilson\",\n\t\"password\": \"123\"\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/authentication",
@@ -549,7 +536,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2d1e8a5d-6e8a-4111-8016-9d516c21c0de",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -634,7 +620,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cff03f8c-6887-49e7-a383-adba37ce9a9f",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"pm.environment.set(\"jwt\", jsonData.data);"
@@ -661,10 +646,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {}
-							}
+							"raw": ""
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/authentication/otp?{{otp}}",
@@ -695,7 +677,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6517d5d2-92de-4697-afba-c176a896659e",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"pm.environment.set(\"otp\", jsonData.data.otp);"
@@ -719,10 +700,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"token\": \"74d1224b0135af1e973f8f19c8564156\"\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n    \"token\": \"74d1224b0135af1e973f8f19c8564156\"\r\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/authentication/otp",
@@ -741,8 +719,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Misc",
@@ -753,7 +730,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "532c2775-520a-40a7-b5d6-b24ee2df21de",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -813,7 +789,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "576a4200-c162-4178-a860-76265cc97c4c",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -841,8 +816,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Metadata",
@@ -856,7 +830,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "351aa413-8ca8-4b30-be2b-ca6250cc5573",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -985,7 +958,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ca31d5e0-59e3-4603-8be4-acd4cb8e2e5e",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1114,7 +1086,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9caf5431-4d58-4a9d-9fd4-2dba0ec53e49",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1237,7 +1208,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "674763be-9dd2-411c-b3a7-5decc6bb32e3",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1332,7 +1302,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"name\": \"MY_API_TEST_FOLDER\",\n\t\"parentId\": \"159cb49902c14123ba679ac78accecef\"\n}"
+									"raw": "{\n\t\"name\": \"验收\",\n    \"type\": \"CollectionPool\",\n\t\"parentId\": \"c2779b8cd40e1c228b4cc20008078954\",\n    \"pendingToDelete\": true,\n    \"deleteProtection\": false,\n    \"comments\": \"Comments\",\n    \"usageRights\": \"UsageRights\",\n    \"topicTitle\": \"TopicTitle\",\n    \"plannedDeletionDate\": \"2022-01-12 20:30:22\",\n    \"matadata\": {\n        \n    }\n}"
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/folder",
@@ -1357,7 +1327,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "e33d9d77-9773-42f1-a951-5feb5f588342",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1478,7 +1447,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b9adf197-592a-4022-926e-bb435f369c4a",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1573,7 +1541,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"id\": \"f82f53d636ee499a82086f90f176f3c4\",\r\n  \"name\": \"MY_API_TEST_FOLDER_2\"\r\n}"
+									"raw": "{\r\n    \"id\": \"6707d2ac1b5145aa9610c822fd5f3b76\",\r\n    \"name\": \"update_011adwad511\",\r\n    \"pendingToDelete\": true,\r\n    \"deleteProtection\": false,\r\n    \"comments\": \"Comments\",\r\n    \"usageRights\": \"UsageRights\",\r\n    \"topicTitle\": \"TopicTitle\",\r\n    \"plannedDeletionDate\": \"2022-01-12 20:30:22\",\r\n    \"matadata\": {\r\n        \r\n    }\r\n} "
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/folder",
@@ -1598,7 +1566,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "d1688044-195e-46fc-b3c6-17cad23f122a",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1688,7 +1655,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5f52ce78-9c26-411b-9b58-1aa5e2224251",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1748,7 +1714,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0d6895dd-e937-4ad4-895b-0911165fe191",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1808,7 +1773,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "17c7a8be-995f-4a5f-bb02-76a55451e1fe",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -1862,9 +1826,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Material",
@@ -1875,7 +1837,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8a1eeb9c-a29a-4cfc-ba8e-a9c39267ecd3",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2073,7 +2034,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ac51b9fe-25ba-4dc4-bee4-417bb460e3ec",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2106,7 +2066,7 @@
 									}
 								],
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('69733655253548968a6b929c737c83b4')",
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('e05879616b62441e8ef91af43cdada9f')",
 									"protocol": "{{protocol}}",
 									"host": [
 										"{{host}}"
@@ -2116,7 +2076,7 @@
 										"api",
 										"{{version}}",
 										"metadata",
-										"material('69733655253548968a6b929c737c83b4')"
+										"material('e05879616b62441e8ef91af43cdada9f')"
 									]
 								}
 							},
@@ -2128,7 +2088,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4ea7ce71-cb6e-4371-9982-e90067642798",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2183,7 +2142,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b98fd095-04af-418d-b475-46e0cf0eb89a",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2238,7 +2196,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "87e6128d-d2fb-41b0-bb52-2f346d0b1e9c",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2374,10 +2331,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\"name\": \"TEST ON 20200318\",\r\n\t\"folderId\": \"70d5a72098604c29a78c122906e0b7f0\",\r\n\t\"type\": \"video\",\r\n\t\"itemName\": \"ItemName\",\r\n\t\"journalist\": \"Journalist\",\r\n\t\"category\": \"Category\",\r\n\t\"programName\": \"ProgramName\",\r\n\t\"deleteProtection\": true,\r\n\t\"pendingToDelete\": true,\r\n\t\"materialId\": \"this is my materialId\",\r\n\t\"rights\": \"Rights\",\r\n\t\"comments\": \"Comments\"\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n\t\"name\": \"TEST ON 20200318\",\r\n\t\"folderId\": \"70d5a72098604c29a78c122906e0b7f0\",\r\n\t\"type\": \"video\",\r\n\t\"itemName\": \"ItemName\",\r\n\t\"journalist\": \"Journalist\",\r\n\t\"category\": \"Category\",\r\n\t\"programName\": \"ProgramName\",\r\n\t\"deleteProtection\": true,\r\n\t\"pendingToDelete\": true,\r\n\t\"materialId\": \"this is my materialId\",\r\n\t\"rights\": \"Rights\",\r\n\t\"comments\": \"Comments\"\r\n}"
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material",
@@ -2402,7 +2356,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "781d1bec-0a16-4794-b2a8-5188852987aa",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2538,10 +2491,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\"folderId\": \"b1aaafdff58c5e3eb86b77e996948b97\",\r\n    \"materialId\": \"89acf016197144f48e2c7072a27ab303\"\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n\t\"folderId\": \"b1aaafdff58c5e3eb86b77e996948b97\",\r\n    \"materialId\": \"89acf016197144f48e2c7072a27ab303\"\r\n}"
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/collection-pool/link",
@@ -2567,7 +2517,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ab852cde-af7d-4959-9d96-949520436f3c",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2703,10 +2652,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\"materialIds\": [\"fb7be4714e2f44e1b69fa2ff63d05adb\"]\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n\t\"materialIds\": [\"fb7be4714e2f44e1b69fa2ff63d05adb\"]\r\n}"
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/collection-pool/link",
@@ -2732,7 +2678,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "974d6200-dbe2-4d59-a795-22eee0ddfd89",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2801,10 +2746,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\t\"name\": \"MyFirstAPIGWUploadTest\",\r\n\t\"folderId\": \"6db996357a5741269bc25c76402f10f0\",\r\n\t\"type\": \"video\",\r\n\t\"customMetadata\": {\r\n\t\t\"Format_ENUM\": \"1\"\r\n\t}\r\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\r\n\t\"name\": \"MyFirstAPIGWUploadTest\",\r\n\t\"folderId\": \"6db996357a5741269bc25c76402f10f0\",\r\n\t\"type\": \"video\",\r\n\t\"customMetadata\": {\r\n\t\t\"Format_ENUM\": \"1\"\r\n\t}\r\n}"
 								},
 								"url": {
 									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material",
@@ -2829,7 +2771,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8f38d0d0-7e62-427b-87d2-7047d3f978cc",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -2988,7 +2929,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "16c89dcf-88b2-46d1-a7a6-c1d1e294d309",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -3147,7 +3087,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4b14c279-0f0b-4506-a5e5-587ab734a036",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -3597,13 +3536,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"id\": \"69733655253548968a6b929c737c83b4\",\n\t\"folderId\":\"7243b2117b3f1ebbe1662d9daeb863e1\"\n}",
-									"options": {
-										"raw": {}
-									}
+									"raw": "{\n\t\"id\": \"4ee447bece9c49f09eca4d6a8df19494\",\n\t\"name\":\"123\"\n}"
 								},
 								"url": {
-									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material",
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material?force=true",
 									"protocol": "{{protocol}}",
 									"host": [
 										"{{host}}"
@@ -3614,6 +3550,12 @@
 										"{{version}}",
 										"metadata",
 										"material"
+									],
+									"query": [
+										{
+											"key": "force",
+											"value": "true"
+										}
 									]
 								}
 							},
@@ -3625,7 +3567,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9b324091-f768-4b7e-bb03-64f0187b1076",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4100,7 +4041,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "97baf37a-afb8-4ec3-b87b-c4fb59d273d3",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4182,7 +4122,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f7765761-b638-4543-852a-cea5fcd56cfb",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4265,7 +4204,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "3d6d4dcd-ed33-41b0-a74f-263ea90cf845",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4327,7 +4265,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "85c1812b-ad15-43cd-88d4-1cc8d1523f0a",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4389,7 +4326,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f6be78f9-2d02-4ae4-9d47-27925084a1b9",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4445,7 +4381,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "79c9bfa7-08e8-438a-908e-8413bb448d5b",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4505,7 +4440,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "cf4d6381-327f-40f5-aa24-4bf6778829b6",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4565,7 +4499,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "9b8325cf-aad8-4a86-9a14-ab575d6728d5",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4624,7 +4557,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3906da20-96be-4442-a600-f848cca6c887",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -4634,16 +4566,13 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7c393470-8e4b-4810-8e4a-51607e58cb0c",
 								"type": "text/javascript",
 								"exec": [
 									""
 								]
 							}
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Marker",
@@ -4654,7 +4583,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "85df0bf1-77c8-4c0f-9790-04db4ff6a808",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4784,7 +4712,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "f6b605e5-71d5-4569-9bfb-b38ac74ea5a8",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -4910,7 +4837,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0b34fe8c-3294-4019-9e8f-361e29c39336",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5030,7 +4956,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "bf3439e8-df2b-4b5e-ba7c-fde36d655ee0",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5139,12 +5064,243 @@
 							"response": []
 						},
 						{
+							"name": "✔️Create marker (Copyright)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var schema = {",
+											"  \"type\": \"object\",",
+											"  \"required\": [",
+											"    \"status\",",
+											"    \"data\"",
+											"  ],",
+											"  \"properties\": {",
+											"    \"status\": {",
+											"      \"$id\": \"#/properties/status\",",
+											"      \"type\": \"integer\"",
+											"    },",
+											"    \"data\": {",
+											"      \"$id\": \"#/properties/data\",",
+											"      \"type\": \"object\",",
+											"      \"required\": [",
+											"        \"id\",",
+											"        \"keyframe\",",
+											"        \"createTime\",",
+											"        \"type\",",
+											"        \"color\",",
+											"        \"note\"",
+											"      ],",
+											"      \"properties\": {",
+											"        \"id\": {",
+											"          \"$id\": \"#/properties/data/properties/id\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"keyframe\": {",
+											"          \"$id\": \"#/properties/data/properties/keyframe\",",
+											"          \"type\": \"integer\"",
+											"        },",
+											"        \"createTime\": {",
+											"          \"$id\": \"#/properties/data/properties/createTime\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"type\": {",
+											"          \"$id\": \"#/properties/data/properties/type\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"color\": {",
+											"          \"$id\": \"#/properties/data/properties/color\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"note\": {",
+											"          \"$id\": \"#/properties/data/properties/note\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        }",
+											"      }",
+											"    }",
+											"  }",
+											"};",
+											"",
+											"pm.test('Schema is valid', function() {",
+											"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"in\": 15,\n    \"out\": 25,\n    \"note\": \"Note for Copyrights\",\n    \"color\": \"yellow\",\n    \"metadata\": {\n        \"reisId\": \"reisId\",\n        \"markoId\": \"markoId\",\n        \"rechtegeber\": \"rechtegeber\",\n        \"agentur\": \"agentur\",\n        \"reislink\": \"reislink\",\n        \"title\": \"title\",\n        \"materialId\": \"materialId\"\n    }\n}"
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('01cf1d72899844ada25e7f493eee998b')/copyrights-marker",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"{{version}}",
+										"metadata",
+										"material('01cf1d72899844ada25e7f493eee998b')",
+										"copyrights-marker"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "✔️Modify marker (Copyright)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"var schema = {",
+											"  \"type\": \"object\",",
+											"  \"required\": [",
+											"    \"status\",",
+											"    \"data\"",
+											"  ],",
+											"  \"properties\": {",
+											"    \"status\": {",
+											"      \"$id\": \"#/properties/status\",",
+											"      \"type\": \"integer\"",
+											"    },",
+											"    \"data\": {",
+											"      \"$id\": \"#/properties/data\",",
+											"      \"type\": \"object\",",
+											"      \"required\": [",
+											"        \"id\",",
+											"        \"keyframe\",",
+											"        \"type\",",
+											"        \"color\",",
+											"        \"note\"",
+											"      ],",
+											"      \"properties\": {",
+											"        \"id\": {",
+											"          \"$id\": \"#/properties/data/properties/id\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"keyframe\": {",
+											"          \"$id\": \"#/properties/data/properties/keyframe\",",
+											"          \"type\": \"integer\"",
+											"        },",
+											"        \"type\": {",
+											"          \"$id\": \"#/properties/data/properties/type\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"color\": {",
+											"          \"$id\": \"#/properties/data/properties/color\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        },",
+											"        \"note\": {",
+											"          \"$id\": \"#/properties/data/properties/note\",",
+											"          \"type\": \"string\",",
+											"          \"pattern\": \"^(.*)$\"",
+											"        }",
+											"      }",
+											"    }",
+											"  }",
+											"};",
+											"",
+											"pm.test('Schema is valid', function() {",
+											"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"64e52591ef7540e68d90a83d1950fef6\",\r\n    \"in\": 23,\r\n    \"out\": 40,\r\n    \"note\": \"Note for Copyrights\",\r\n    \"color\": \"yellow\",\r\n    \"metadata\": {\r\n        \"reisId\": \"reisId_update\",\r\n        \"markoId\": \"markoId_update\",\r\n        \"rechtegeber\": \"rechtegeber_update\",\r\n        \"agentur\": \"agentur_update\",\r\n        \"reislink\": \"reislink_update\",\r\n        \"title\": \"title_update\",\r\n        \"materialId\": \"materialId_update\"\r\n    }\r\n}"
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('01cf1d72899844ada25e7f493eee998b')/copyrights-marker",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"{{version}}",
+										"metadata",
+										"material('01cf1d72899844ada25e7f493eee998b')",
+										"copyrights-marker"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "✔️Create marker (ChangeMarker)",
 							"event": [
 								{
 									"listen": "test",
 									"script": {
-										"id": "4e84cf97-8ad0-4146-a6b6-84323ab93fa9",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5274,7 +5430,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "8eaec1de-d345-4f6e-ba05-83afcf5ed300",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5404,7 +5559,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "c326c450-1df4-448c-a455-f2e412a1ccc2",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5539,7 +5693,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "ca076b1b-fa73-41be-84be-45cba7681a8e",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5680,7 +5833,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "7052a34a-27f9-4410-9ed8-f5ef91adaba5",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5815,7 +5967,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "587112a8-703a-402f-b112-9a36c519bae9",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -5956,7 +6107,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "41b8ddbd-a52e-467f-8df1-3dc07dc28cd4",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -6091,7 +6241,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0a81185c-2aad-45c5-bcdf-ee151948e59c",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -6226,7 +6375,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4afae40d-173f-40bf-a5b6-67409239b58e",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -6319,7 +6467,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "3152292b-83df-426b-9c76-ee0ebf4a24b6",
 										"exec": [
 											"var jsonData = pm.response.json();",
 											"",
@@ -6406,9 +6553,7 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
 				},
 				{
 					"name": "Linkage",
@@ -6419,7 +6564,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "fe2372f7-859f-4792-95b6-e724106b9c85",
 										"exec": [
 											"var jsonData = pm.response.json();\r",
 											"\r",
@@ -6581,7 +6725,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "b4e98aac-6bb1-403f-aba2-a121af56fcae",
 										"exec": [
 											"var jsonData = pm.response.json();\r",
 											"\r",
@@ -6743,7 +6886,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "5b0b20f8-11d7-40c4-aeba-fedf9dab3266",
 										"exec": [
 											"var jsonData = pm.response.json();\r",
 											"\r",
@@ -6921,7 +7063,6 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "4b6134c1-70a7-4ffb-974d-bbdd63a29d59",
 										"exec": [
 											"var jsonData = pm.response.json();\r",
 											"\r",
@@ -6964,12 +7105,339 @@
 							},
 							"response": []
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					]
+				},
+				{
+					"name": "RightsLights",
+					"item": [
+						{
+							"name": "✔️Update rights lights",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"var schema = {\r",
+											"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+											"    \"default\": {},\r",
+											"    \"examples\": [\r",
+											"        {\r",
+											"            \"status\": 200,\r",
+											"            \"data\": {\r",
+											"                \"displayName\": \"63001\",\r",
+											"                \"attachmentId\": \"e3741a3f7efc414684b6da1f5dae6837\",\r",
+											"                \"attachmentName\": \"test063001\",\r",
+											"                \"attachmentFolderPath\": \"/Public Material/wilson\"\r",
+											"            }\r",
+											"        }\r",
+											"    ],\r",
+											"    \"required\": [\r",
+											"        \"status\",\r",
+											"        \"data\"\r",
+											"    ],\r",
+											"    \"additionalProperties\": true,\r",
+											"    \"properties\": {\r",
+											"        \"status\": {\r",
+											"            \"$id\": \"#/properties/status\",\r",
+											"            \"type\": \"integer\",\r",
+											"            \"title\": \"The status schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": 0,\r",
+											"            \"examples\": [\r",
+											"                200\r",
+											"            ]\r",
+											"        },\r",
+											"        \"data\": {\r",
+											"            \"$id\": \"#/properties/data\",\r",
+											"            \"type\": \"object\",\r",
+											"            \"title\": \"The data schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": {},\r",
+											"            \"examples\": [\r",
+											"                {\r",
+											"                    \"displayName\": \"63001\",\r",
+											"                    \"attachmentId\": \"e3741a3f7efc414684b6da1f5dae6837\",\r",
+											"                    \"attachmentName\": \"test063001\",\r",
+											"                    \"attachmentFolderPath\": \"/Public Material/wilson\"\r",
+											"                }\r",
+											"            ],\r",
+											"            \"required\": [\r",
+											"                \"displayName\",\r",
+											"                \"attachmentId\",\r",
+											"                \"attachmentName\",\r",
+											"                \"attachmentFolderPath\"\r",
+											"            ],\r",
+											"            \"additionalProperties\": true,\r",
+											"            \"properties\": {\r",
+											"                \"displayName\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/displayName\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The displayName schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"63001\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentId\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentId\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentId schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"e3741a3f7efc414684b6da1f5dae6837\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentName\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentName\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentName schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"test063001\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentFolderPath\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentFolderPath\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentFolderPath schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"/Public Material/wilson\"\r",
+											"                    ]\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.test('Schema is valid', function() {\r",
+											"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"weitergabe\": \"yellow\",\r\n  \"rebroadcasting\": \"yellow\",\r\n  \"partnerDownload\": \"green\",\r\n  \"partnerOds\": \"yellow\",\r\n  \"download\": \"yellow\",\r\n  \"websitetext\": \"yellow\",\r\n  \"tv\": \"yellow\",\r\n  \"horfunk\": \"yellow\",\r\n  \"ods\": \"yellow\",\r\n  \"reis\": \"http://172.16.0.205/CMWeb/NEW-CM/index.html?systemType=&t=1606975784216\",\r\n  \"digivn\": \"http://172.16.0.205/CMWeb/NEW-CM/index.html?systemType=&t=1606975784216\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('01cf1d72899844ada25e7f493eee998b')/rightslights",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"{{version}}",
+										"metadata",
+										"material('01cf1d72899844ada25e7f493eee998b')",
+										"rightslights"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "✔️Get rights lights",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = pm.response.json();\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"var schema = {\r",
+											"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+											"    \"$id\": \"http://example.com/example.json\",\r",
+											"    \"type\": \"object\",\r",
+											"    \"title\": \"The root schema\",\r",
+											"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+											"    \"default\": {},\r",
+											"    \"examples\": [\r",
+											"        {\r",
+											"            \"status\": 200,\r",
+											"            \"data\": {\r",
+											"                \"displayName\": \"63001\",\r",
+											"                \"attachmentId\": \"e3741a3f7efc414684b6da1f5dae6837\",\r",
+											"                \"attachmentName\": \"test063001\",\r",
+											"                \"attachmentFolderPath\": \"/Public Material/wilson\"\r",
+											"            }\r",
+											"        }\r",
+											"    ],\r",
+											"    \"required\": [\r",
+											"        \"status\",\r",
+											"        \"data\"\r",
+											"    ],\r",
+											"    \"additionalProperties\": true,\r",
+											"    \"properties\": {\r",
+											"        \"status\": {\r",
+											"            \"$id\": \"#/properties/status\",\r",
+											"            \"type\": \"integer\",\r",
+											"            \"title\": \"The status schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": 0,\r",
+											"            \"examples\": [\r",
+											"                200\r",
+											"            ]\r",
+											"        },\r",
+											"        \"data\": {\r",
+											"            \"$id\": \"#/properties/data\",\r",
+											"            \"type\": \"object\",\r",
+											"            \"title\": \"The data schema\",\r",
+											"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"            \"default\": {},\r",
+											"            \"examples\": [\r",
+											"                {\r",
+											"                    \"displayName\": \"63001\",\r",
+											"                    \"attachmentId\": \"e3741a3f7efc414684b6da1f5dae6837\",\r",
+											"                    \"attachmentName\": \"test063001\",\r",
+											"                    \"attachmentFolderPath\": \"/Public Material/wilson\"\r",
+											"                }\r",
+											"            ],\r",
+											"            \"required\": [\r",
+											"                \"displayName\",\r",
+											"                \"attachmentId\",\r",
+											"                \"attachmentName\",\r",
+											"                \"attachmentFolderPath\"\r",
+											"            ],\r",
+											"            \"additionalProperties\": true,\r",
+											"            \"properties\": {\r",
+											"                \"displayName\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/displayName\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The displayName schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"63001\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentId\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentId\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentId schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"e3741a3f7efc414684b6da1f5dae6837\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentName\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentName\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentName schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"test063001\"\r",
+											"                    ]\r",
+											"                },\r",
+											"                \"attachmentFolderPath\": {\r",
+											"                    \"$id\": \"#/properties/data/properties/attachmentFolderPath\",\r",
+											"                    \"type\": \"string\",\r",
+											"                    \"title\": \"The attachmentFolderPath schema\",\r",
+											"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+											"                    \"default\": \"\",\r",
+											"                    \"examples\": [\r",
+											"                        \"/Public Material/wilson\"\r",
+											"                    ]\r",
+											"                }\r",
+											"            }\r",
+											"        }\r",
+											"    }\r",
+											"};\r",
+											"\r",
+											"pm.test('Schema is valid', function() {\r",
+											"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/metadata/material('01cf1d72899844ada25e7f493eee998b')/rightslights",
+									"protocol": "{{protocol}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"api",
+										"{{version}}",
+										"metadata",
+										"material('01cf1d72899844ada25e7f493eee998b')",
+										"rightslights"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "EDL",
@@ -6980,7 +7448,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1418ef4-bd70-448c-8966-b83be58273d1",
 								"exec": [
 									""
 								],
@@ -7010,10 +7477,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"TEST_EDL\",\r\n\t\"folderId\": \"14cca2b3039449fcadd2c27c9451c1fb\",\r\n\t\"resolution\": \"HD\",\r\n\t\"frameRate\": \"STD_25_P\",\r\n\t\"scale\": \"STD_1609\",\r\n\t\"tracks\": {\r\n\t\t\"graphicTrackNumber\": 2,\r\n\t\t\"videoTrackNumber\": 1,\r\n\t\t\"audioTrackNumber\": 4\r\n\t}\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n\t\"name\": \"TEST_EDL\",\r\n\t\"folderId\": \"14cca2b3039449fcadd2c27c9451c1fb\",\r\n\t\"resolution\": \"HD\",\r\n\t\"frameRate\": \"STD_25_P\",\r\n\t\"scale\": \"STD_1609\",\r\n\t\"tracks\": {\r\n\t\t\"graphicTrackNumber\": 2,\r\n\t\t\"videoTrackNumber\": 1,\r\n\t\t\"audioTrackNumber\": 4\r\n\t}\r\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/edl",
@@ -7037,7 +7501,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a4995243-c399-4b53-8402-187e43b05ccf",
 								"exec": [
 									""
 								],
@@ -7067,10 +7530,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"name\": \"OUTPUT_MATERIAL_NAME\",\r\n\t\"folderId\": \"f30786e06abe799af23a73c3073a5d29\",\r\n\t\"resolution\": \"HD\"\r\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\r\n\t\"name\": \"OUTPUT_MATERIAL_NAME\",\r\n\t\"folderId\": \"f30786e06abe799af23a73c3073a5d29\",\r\n\t\"resolution\": \"HD\"\r\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/edl/render('f800af728bb14abfb1afb8774445d8ce')",
@@ -7089,8 +7549,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Rundown",
@@ -7101,7 +7560,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "469c54f7-a492-4de3-807c-a1b83d2589ce",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -7523,7 +7981,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3bcbb8ad-5336-47bf-b3f3-b3315900748a",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -7862,8 +8319,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Search",
@@ -7874,7 +8330,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fcc0520d-a87e-4679-a3dd-575c2c172c42",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -7929,7 +8384,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2a65b5c0-ab64-4a18-b0a1-d6c5f233ce61",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -7963,10 +8417,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"conditions\": [\n\t\t{\n\t\t\t\"field\": \"Format_ENUM\",\n\t\t\t\"value\": \"1\",\n\t\t\t\"operator\": \"and\"\n\t\t}\n\t],\n\t\"repository\": \"material\"\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n\t\"conditions\": [\n\t\t{\n\t\t\t\"field\": \"Format_ENUM\",\n\t\t\t\"value\": \"1\",\n\t\t\t\"operator\": \"and\"\n\t\t}\n\t],\n\t\"repository\": \"material\"\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/search?page=1&size=20&orderby=CreateTime&sort=desc",
@@ -8002,8 +8453,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "IO",
@@ -8014,7 +8464,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "19147cd6-2792-449f-9460-2fb1d86cc197",
 								"exec": [
 									""
 								],
@@ -8065,7 +8514,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e9c27d9f-f5d0-4f3f-bbbc-5fae58e612c2",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"pm.environment.set(\"jobId\", jsonData.data.jobId);"
@@ -8207,7 +8655,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4da8beeb-4945-4d2a-b2b0-51790f10444e",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"pm.environment.set(\"filePath\", jsonData.data.filePath);"
@@ -8457,10 +8904,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"asNewName\":\"TestGGG\",\n\t\"comments\":\"Some comments here\",\n\t\"in\": 0,\n\t\"out\": 5,\n\t\"priority\": 99,\n\t\"tags\": {\n\t\t\"TAG1\": \"1002\"\n\t}\n}",
-							"options": {
-								"raw": {}
-							}
+							"raw": "{\n\t\"asNewName\":\"TestGGG\",\n\t\"comments\":\"Some comments here\",\n\t\"in\": 0,\n\t\"out\": 5,\n\t\"priority\": 99,\n\t\"tags\": {\n\t\t\"TAG1\": \"1002\"\n\t}\n}"
 						},
 						"url": {
 							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/io/export/site('29')/material('18ebb886cb8d44c8ac109ed1d30679e3')",
@@ -8481,8 +8925,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Subscription",
@@ -8493,7 +8936,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3768aec8-e31b-484d-9746-b5c095c26c11",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -8582,7 +9024,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78ea1e9b-3554-420d-a3d7-c7323881c413",
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
@@ -8635,7 +9076,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78fe0834-4b91-44a5-890b-64d5ff28fdad",
 								"exec": [
 									""
 								],
@@ -8684,8 +9124,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Monitoring",
@@ -8696,7 +9135,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b90a9e72-4948-4c40-9804-1050e7857dcd",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -8822,7 +9260,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "79b72a08-f4cd-4924-9aba-6446d5bfc048",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -8907,7 +9344,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5e854c7-a9f1-4047-9145-c034c5abc0d8",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9000,7 +9436,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3773e61d-2df6-4ee0-bec1-35aee549ff33",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9118,7 +9553,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8c875da8-db1c-414b-84f0-eba46ba7c06d",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9215,7 +9649,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d2edd855-6a25-48cb-bdd1-c6fa92778e1f",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9313,7 +9746,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0efa90ca-f86d-4955-87b7-0257f71e5d12",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9392,8 +9824,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "System",
@@ -9404,7 +9835,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7fe0ea45-96a1-4da4-b6b5-19229460b2b2",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9496,7 +9926,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8483f925-fad0-4168-88b7-844f547e91b0",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9587,7 +10016,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a996eddf-487b-4ded-b235-e0bab3f8d1b2",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9683,7 +10111,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c3c6e9e-9ee5-431e-82e0-57f88d7b7f2d",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9780,7 +10207,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a84fdf2e-b1ee-4d49-b264-84a87dfb5ba1",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9881,7 +10307,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "99edf730-342e-4c1b-b29e-c0fb8219ef51",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -9987,7 +10412,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f39073b1-7d05-4c43-b588-56fdaf646eb4",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -10204,7 +10628,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "98723d4f-7ef3-417b-8b86-cf35c95a1680",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -10462,7 +10885,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "59b0c0d8-a9e7-4a7a-89cb-26aefa0716e4",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -10716,7 +11138,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "31d9be2c-c538-448b-9755-068440292d13",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -10969,7 +11390,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "000f72a5-b03c-454b-8f1c-2564a6d6792c",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11224,7 +11644,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "17707544-d453-4cf7-8bc7-ce28b3e44793",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11482,7 +11901,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0eb6ffb1-f1ab-4a81-ac96-bbd498a3ef23",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11570,7 +11988,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4f67b9df-0cc9-4c23-9be5-2224e60d0b90",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11672,7 +12089,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "00ec6a68-33c0-40c1-bfaa-fc07960ac772",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11777,7 +12193,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9fa58d9b-b3aa-413a-b6b4-6c869eeedb50",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -11899,7 +12314,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "81cf4ab8-4232-47a1-a3e5-6972b1db4048",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -12016,7 +12430,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d3c56928-8fc9-4e7f-b1b9-2a5213764a1b",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -12104,7 +12517,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec61f09e-9408-4cc0-ab29-be4e57aa303b",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -12359,7 +12771,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "52ca3fa8-0328-45fb-a9ec-9dd3d0adc14a",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -12451,7 +12862,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "29958cc5-f3b1-4b0b-a4b5-e1db2152fbdd",
 								"exec": [
 									"var jsonData = pm.response.json();",
 									"",
@@ -12537,8 +12947,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Ingest",
@@ -12549,7 +12958,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eab0984e-4b6e-4b3c-b3dd-2766f916ef39",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -12726,7 +13134,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "611c9399-936d-4b08-ab4f-7caadd5d75b2",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -13075,7 +13482,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b9cbed42-ba01-42e2-b04e-212a9d31d767",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -13484,7 +13890,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "58d62f05-73e9-46ea-90b8-9d596c76cefb",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -13843,7 +14248,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "cca9581f-ba08-4054-b6df-71022ab65fa0",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -14225,7 +14629,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bc03703b-edd9-4b94-89c5-14a66bbaa6e4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -14607,7 +15010,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0c48321b-7e6f-44fd-85d8-455a158e6120",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -14989,7 +15391,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ea9594ff-d5dd-468b-a92b-bb943eba89a9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -15357,7 +15758,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c6e44afa-fe55-4bed-9bf4-d71cfd2705e4",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -15725,7 +16125,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "33ed8715-827f-4ef1-99fd-8aa713e35a39",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -16093,7 +16492,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "124d2a62-75f0-4351-b196-f699dc9842b0",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -16136,782 +16534,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Rundown",
-			"item": [
-				{
-					"name": "Get all rundowns",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e1964f57-182c-455b-86b5-69974ad1fce8",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"var schema = {\r",
-									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
-									"    \"$id\": \"http://example.com/example.json\",\r",
-									"    \"type\": \"object\",\r",
-									"    \"title\": \"The root schema\",\r",
-									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
-									"    \"default\": {},\r",
-									"    \"examples\": [\r",
-									"        {\r",
-									"            \"status\": 200,\r",
-									"            \"data\": [\r",
-									"                {\r",
-									"                    \"id\": \"ad730281-ab65-4cac-8c6f-faece6b71e93\",\r",
-									"                    \"name\": \"2222\",\r",
-									"                    \"createDate\": \"2020-01-10T14:41:35.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-01-10T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"a5ac3721-ce7a-4a67-b1a5-6f7319df4f95\",\r",
-									"                    \"name\": \"11\",\r",
-									"                    \"createDate\": \"2020-02-19T15:40:33.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-02-19T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"60d72095-67a6-4313-83b5-4857ff878548\",\r",
-									"                    \"name\": \"1\",\r",
-									"                    \"createDate\": \"2020-02-20T15:04:11.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-02-20T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"4570869d-6443-4a7e-a5b8-9cbcca2330aa\",\r",
-									"                    \"name\": \"2\",\r",
-									"                    \"createDate\": \"2020-02-21T10:16:04.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-02-21T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"213d3a13-ae64-49e6-a72e-3973ba849b12\",\r",
-									"                    \"name\": \"D&D\",\r",
-									"                    \"createDate\": \"2020-02-24T14:01:56.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-02-24T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"7342c419-521e-48cc-838d-275751f8a050\",\r",
-									"                    \"name\": \"D&D\",\r",
-									"                    \"createDate\": \"2020-02-24T15:40:06.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-02-24T15:40:06.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"a7c171bd-ff12-450f-be00-b9a1b87df784\",\r",
-									"                    \"name\": \"new\",\r",
-									"                    \"createDate\": \"2020-03-05T15:44:45.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-03-05T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"13db1c6e-fac7-464b-bdff-d20f764e7fde\",\r",
-									"                    \"name\": \"6577\",\r",
-									"                    \"createDate\": \"2020-08-04T17:00:06.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-08-04T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"7895e1db-dd75-4ada-a848-79c4fac2cc5c\",\r",
-									"                    \"name\": \"111\",\r",
-									"                    \"createDate\": \"2020-08-19T10:25:13.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-08-19T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"9d6933ad-4838-4460-b898-4977c5831f04\",\r",
-									"                    \"name\": \"wfg\",\r",
-									"                    \"createDate\": \"2020-08-21T13:44:53.000Z\",\r",
-									"                    \"studioName\": \"StudioA\",\r",
-									"                    \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                    \"playDate\": \"2020-08-21T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"1ed4941b-d870-4f07-8032-032099d28806\",\r",
-									"                    \"name\": \"smart\",\r",
-									"                    \"createDate\": \"2019-08-21T20:45:31.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-08-21T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"e6378108-5ae0-4bb6-8db3-ee5985036e14\",\r",
-									"                    \"name\": \"pppp\",\r",
-									"                    \"createDate\": \"2019-08-22T18:05:18.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-08-22T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"7a24ad25-0a7a-440a-b3b9-eab78f72b0dd\",\r",
-									"                    \"name\": \"To oa folder\",\r",
-									"                    \"createDate\": \"2019-11-06T23:25:20.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-06T00:00:00.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"a1a63f48-b020-42e2-8e09-af23afba7d10\",\r",
-									"                    \"name\": \"yu1115\",\r",
-									"                    \"createDate\": \"2019-11-16T00:58:38.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-16T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"256ab101-5199-47e8-b50c-e87f7a70ede2\",\r",
-									"                    \"name\": \"hcx-1116\",\r",
-									"                    \"createDate\": \"2019-11-16T01:59:23.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-16T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"eb1c7ce7-efc6-4509-a1cb-0e94aaacfee6\",\r",
-									"                    \"name\": \"hcx-1118\",\r",
-									"                    \"createDate\": \"2019-11-18T18:18:38.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-18T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"20e5804c-18fa-4adb-8b9c-05410399940c\",\r",
-									"                    \"name\": \"cc\",\r",
-									"                    \"createDate\": \"2019-11-19T02:30:15.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-19T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"a197aa05-1343-40ea-ad81-fdacf3150dda\",\r",
-									"                    \"name\": \"yu_1118\",\r",
-									"                    \"createDate\": \"2019-11-19T02:30:21.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-19T02:30:21.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"68c8f0a2-e713-490a-b4b5-754abd3fa529\",\r",
-									"                    \"name\": \"hcx-1119\",\r",
-									"                    \"createDate\": \"2019-11-19T18:21:09.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2019-11-19T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"2daf0ef5-a601-4eeb-a469-4e6413d7efde\",\r",
-									"                    \"name\": \"123\",\r",
-									"                    \"createDate\": \"2020-02-19T15:47:48.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-02-19T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"0a9c5a69-2bf7-4d3c-994b-344c35168220\",\r",
-									"                    \"name\": \"0512\",\r",
-									"                    \"createDate\": \"2020-05-12T10:29:32.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-05-12T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"ENPS1;P_NEWSW;A3721C3F-98D9-483A-A6941AE4B7908D1E\",\r",
-									"                    \"name\": \"CU - Afvikling\",\r",
-									"                    \"createDate\": \"2020-07-24T18:56:39.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-07-24T09:00:00.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"ed0cc017-e4ba-4e4b-8f40-5edf37757875\",\r",
-									"                    \"name\": \"dd\",\r",
-									"                    \"createDate\": \"2020-08-04T18:49:53.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-08-04T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"a4076cf7-9f38-46c6-98d7-9a49d69631c0\",\r",
-									"                    \"name\": \"1111\",\r",
-									"                    \"createDate\": \"2020-08-12T16:18:23.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-08-12T23:59:59.000Z\"\r",
-									"                },\r",
-									"                {\r",
-									"                    \"id\": \"e06b81a1-e407-41e0-9639-bfcb5a2eb1e1\",\r",
-									"                    \"name\": \"1111\",\r",
-									"                    \"createDate\": \"2020-08-17T11:16:08.000Z\",\r",
-									"                    \"studioName\": \"StudioB\",\r",
-									"                    \"studioMosId\": \"sony.studioB.mos\",\r",
-									"                    \"playDate\": \"2020-08-17T23:59:59.000Z\"\r",
-									"                }\r",
-									"            ],\r",
-									"            \"requestId\": \"0HM27V5E7LN8E:00000001\"\r",
-									"        }\r",
-									"    ],\r",
-									"    \"required\": [\r",
-									"        \"status\",\r",
-									"        \"data\",\r",
-									"        \"requestId\"\r",
-									"    ],\r",
-									"    \"properties\": {\r",
-									"        \"status\": {\r",
-									"            \"$id\": \"#/properties/status\",\r",
-									"            \"type\": \"integer\",\r",
-									"            \"title\": \"The status schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": 0,\r",
-									"            \"examples\": [\r",
-									"                200\r",
-									"            ]\r",
-									"        },\r",
-									"        \"data\": {\r",
-									"            \"$id\": \"#/properties/data\",\r",
-									"            \"type\": \"array\",\r",
-									"            \"title\": \"The data schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": [],\r",
-									"            \"examples\": [\r",
-									"                [\r",
-									"                    {\r",
-									"                        \"id\": \"ad730281-ab65-4cac-8c6f-faece6b71e93\",\r",
-									"                        \"name\": \"2222\",\r",
-									"                        \"createDate\": \"2020-01-10T14:41:35.000Z\",\r",
-									"                        \"studioName\": \"StudioA\",\r",
-									"                        \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                        \"playDate\": \"2020-01-10T23:59:59.000Z\"\r",
-									"                    },\r",
-									"                    {\r",
-									"                        \"id\": \"a5ac3721-ce7a-4a67-b1a5-6f7319df4f95\",\r",
-									"                        \"name\": \"11\",\r",
-									"                        \"createDate\": \"2020-02-19T15:40:33.000Z\",\r",
-									"                        \"studioName\": \"StudioA\",\r",
-									"                        \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                        \"playDate\": \"2020-02-19T23:59:59.000Z\"\r",
-									"                    }\r",
-									"                ]\r",
-									"            ],\r",
-									"            \"additionalItems\": true,\r",
-									"            \"items\": {\r",
-									"                \"$id\": \"#/properties/data/items\",\r",
-									"                \"anyOf\": [\r",
-									"                    {\r",
-									"                        \"$id\": \"#/properties/data/items/anyOf/0\",\r",
-									"                        \"type\": \"object\",\r",
-									"                        \"title\": \"The first anyOf schema\",\r",
-									"                        \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                        \"default\": {},\r",
-									"                        \"examples\": [\r",
-									"                            {\r",
-									"                                \"id\": \"ad730281-ab65-4cac-8c6f-faece6b71e93\",\r",
-									"                                \"name\": \"2222\",\r",
-									"                                \"createDate\": \"2020-01-10T14:41:35.000Z\",\r",
-									"                                \"studioName\": \"StudioA\",\r",
-									"                                \"studioMosId\": \"sony.studioA.mos\",\r",
-									"                                \"playDate\": \"2020-01-10T23:59:59.000Z\"\r",
-									"                            }\r",
-									"                        ],\r",
-									"                        \"required\": [\r",
-									"                            \"id\",\r",
-									"                            \"name\",\r",
-									"                            \"createDate\",\r",
-									"                            \"studioName\",\r",
-									"                            \"studioMosId\",\r",
-									"                            \"playDate\"\r",
-									"                        ],\r",
-									"                        \"properties\": {\r",
-									"                            \"id\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/id\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The id schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"ad730281-ab65-4cac-8c6f-faece6b71e93\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"name\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/name\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The name schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"2222\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"createDate\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/createDate\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The createDate schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"2020-01-10T14:41:35.000Z\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"studioName\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/studioName\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The studioName schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"StudioA\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"studioMosId\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/studioMosId\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The studioMosId schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"sony.studioA.mos\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"playDate\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/playDate\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The playDate schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"2020-01-10T23:59:59.000Z\"\r",
-									"                                ]\r",
-									"                            }\r",
-									"                        },\r",
-									"                        \"additionalProperties\": true\r",
-									"                    }\r",
-									"                ]\r",
-									"            }\r",
-									"        },\r",
-									"        \"requestId\": {\r",
-									"            \"$id\": \"#/properties/requestId\",\r",
-									"            \"type\": \"string\",\r",
-									"            \"title\": \"The requestId schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": \"\",\r",
-									"            \"examples\": [\r",
-									"                \"0HM27V5E7LN8E:00000001\"\r",
-									"            ]\r",
-									"        }\r",
-									"    },\r",
-									"    \"additionalProperties\": true\r",
-									"};\r",
-									"\r",
-									"pm.test('Schema is valid', function() {\r",
-									"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
-									"});\r",
-									"pm.environment.set(\"rundownId\", jsonData.data[1].id);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{jwt}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/rundowns",
-							"protocol": "{{protocol}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"api",
-								"{{version}}",
-								"rundowns"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get stories by ID",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "fa0f4db6-21e0-4475-bf53-6125c8c3facd",
-								"exec": [
-									"var jsonData = pm.response.json();\r",
-									"\r",
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									"var schema = {\r",
-									"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
-									"    \"$id\": \"http://example.com/example.json\",\r",
-									"    \"type\": \"object\",\r",
-									"    \"title\": \"The root schema\",\r",
-									"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
-									"    \"default\": {},\r",
-									"    \"examples\": [\r",
-									"        {\r",
-									"            \"status\": 200,\r",
-									"            \"data\": [\r",
-									"                {\r",
-									"                    \"storyTitle\": \"No Name Story\",\r",
-									"                    \"events\": [\r",
-									"                        {\r",
-									"                            \"eventTitle\": \"No Name Story\",\r",
-									"                            \"materialId\": \"\",\r",
-									"                            \"materialTitle\": \"\",\r",
-									"                            \"duration\": 0,\r",
-									"                            \"som\": 0,\r",
-									"                            \"eom\": 0,\r",
-									"                            \"version\": \"0/0\",\r",
-									"                            \"channel\": \"\",\r",
-									"                            \"status\": \"Idle\"\r",
-									"                        }\r",
-									"                    ]\r",
-									"                }\r",
-									"            ],\r",
-									"            \"requestId\": \"0HM27VB1OM0DS:00000001\"\r",
-									"        }\r",
-									"    ],\r",
-									"    \"required\": [\r",
-									"        \"status\",\r",
-									"        \"data\",\r",
-									"        \"requestId\"\r",
-									"    ],\r",
-									"    \"properties\": {\r",
-									"        \"status\": {\r",
-									"            \"$id\": \"#/properties/status\",\r",
-									"            \"type\": \"integer\",\r",
-									"            \"title\": \"The status schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": 0,\r",
-									"            \"examples\": [\r",
-									"                200\r",
-									"            ]\r",
-									"        },\r",
-									"        \"data\": {\r",
-									"            \"$id\": \"#/properties/data\",\r",
-									"            \"type\": \"array\",\r",
-									"            \"title\": \"The data schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": [],\r",
-									"            \"examples\": [\r",
-									"                [\r",
-									"                    {\r",
-									"                        \"storyTitle\": \"No Name Story\",\r",
-									"                        \"events\": [\r",
-									"                            {\r",
-									"                                \"eventTitle\": \"No Name Story\",\r",
-									"                                \"materialId\": \"\",\r",
-									"                                \"materialTitle\": \"\",\r",
-									"                                \"duration\": 0,\r",
-									"                                \"som\": 0,\r",
-									"                                \"eom\": 0,\r",
-									"                                \"version\": \"0/0\",\r",
-									"                                \"channel\": \"\",\r",
-									"                                \"status\": \"Idle\"\r",
-									"                            }\r",
-									"                        ]\r",
-									"                    }\r",
-									"                ]\r",
-									"            ],\r",
-									"            \"additionalItems\": true,\r",
-									"            \"items\": {\r",
-									"                \"$id\": \"#/properties/data/items\",\r",
-									"                \"anyOf\": [\r",
-									"                    {\r",
-									"                        \"$id\": \"#/properties/data/items/anyOf/0\",\r",
-									"                        \"type\": \"object\",\r",
-									"                        \"title\": \"The first anyOf schema\",\r",
-									"                        \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                        \"default\": {},\r",
-									"                        \"examples\": [\r",
-									"                            {\r",
-									"                                \"storyTitle\": \"No Name Story\",\r",
-									"                                \"events\": [\r",
-									"                                    {\r",
-									"                                        \"eventTitle\": \"No Name Story\",\r",
-									"                                        \"materialId\": \"\",\r",
-									"                                        \"materialTitle\": \"\",\r",
-									"                                        \"duration\": 0,\r",
-									"                                        \"som\": 0,\r",
-									"                                        \"eom\": 0,\r",
-									"                                        \"version\": \"0/0\",\r",
-									"                                        \"channel\": \"\",\r",
-									"                                        \"status\": \"Idle\"\r",
-									"                                    }\r",
-									"                                ]\r",
-									"                            }\r",
-									"                        ],\r",
-									"                        \"required\": [\r",
-									"                            \"storyTitle\",\r",
-									"                            \"events\"\r",
-									"                        ],\r",
-									"                        \"properties\": {\r",
-									"                            \"storyTitle\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/storyTitle\",\r",
-									"                                \"type\": \"string\",\r",
-									"                                \"title\": \"The storyTitle schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": \"\",\r",
-									"                                \"examples\": [\r",
-									"                                    \"No Name Story\"\r",
-									"                                ]\r",
-									"                            },\r",
-									"                            \"events\": {\r",
-									"                                \"$id\": \"#/properties/data/items/anyOf/0/properties/events\",\r",
-									"                                \"type\": \"array\",\r",
-									"                                \"title\": \"The events schema\",\r",
-									"                                \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                \"default\": [],\r",
-									"                                \"examples\": [\r",
-									"                                    [\r",
-									"                                        {\r",
-									"                                            \"eventTitle\": \"No Name Story\",\r",
-									"                                            \"materialId\": \"\",\r",
-									"                                            \"materialTitle\": \"\",\r",
-									"                                            \"duration\": 0,\r",
-									"                                            \"som\": 0,\r",
-									"                                            \"eom\": 0,\r",
-									"                                            \"version\": \"0/0\",\r",
-									"                                            \"channel\": \"\",\r",
-									"                                            \"status\": \"Idle\"\r",
-									"                                        }\r",
-									"                                    ]\r",
-									"                                ],\r",
-									"                                \"additionalItems\": true,\r",
-									"                                \"items\": {\r",
-									"                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items\",\r",
-									"                                    \"anyOf\": [\r",
-									"                                        {\r",
-									"                                            \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0\",\r",
-									"                                            \"type\": \"object\",\r",
-									"                                            \"title\": \"The first anyOf schema\",\r",
-									"                                            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                            \"default\": {},\r",
-									"                                            \"examples\": [\r",
-									"                                                {\r",
-									"                                                    \"eventTitle\": \"No Name Story\",\r",
-									"                                                    \"materialId\": \"\",\r",
-									"                                                    \"materialTitle\": \"\",\r",
-									"                                                    \"duration\": 0,\r",
-									"                                                    \"som\": 0,\r",
-									"                                                    \"eom\": 0,\r",
-									"                                                    \"version\": \"0/0\",\r",
-									"                                                    \"channel\": \"\",\r",
-									"                                                    \"status\": \"Idle\"\r",
-									"                                                }\r",
-									"                                            ],\r",
-									"                                            \"required\": [\r",
-									"                                                \"eventTitle\",\r",
-									"                                                \"materialId\",\r",
-									"                                                \"materialTitle\",\r",
-									"                                                \"duration\",\r",
-									"                                                \"som\",\r",
-									"                                                \"eom\",\r",
-									"                                                \"version\",\r",
-									"                                                \"channel\",\r",
-									"                                                \"status\"\r",
-									"                                            ],\r",
-									"                                            \"properties\": {\r",
-									"                                                \"eventTitle\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/eventTitle\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The eventTitle schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"No Name Story\"\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"materialId\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/materialId\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The materialId schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"\"\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"materialTitle\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/materialTitle\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The materialTitle schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"\"\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"duration\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/duration\",\r",
-									"                                                    \"type\": \"integer\",\r",
-									"                                                    \"title\": \"The duration schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": 0,\r",
-									"                                                    \"examples\": [\r",
-									"                                                        0\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"som\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/som\",\r",
-									"                                                    \"type\": \"integer\",\r",
-									"                                                    \"title\": \"The som schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": 0,\r",
-									"                                                    \"examples\": [\r",
-									"                                                        0\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"eom\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/eom\",\r",
-									"                                                    \"type\": \"integer\",\r",
-									"                                                    \"title\": \"The eom schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": 0,\r",
-									"                                                    \"examples\": [\r",
-									"                                                        0\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"version\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/version\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The version schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"0/0\"\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"channel\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/channel\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The channel schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"\"\r",
-									"                                                    ]\r",
-									"                                                },\r",
-									"                                                \"status\": {\r",
-									"                                                    \"$id\": \"#/properties/data/items/anyOf/0/properties/events/items/anyOf/0/properties/status\",\r",
-									"                                                    \"type\": \"string\",\r",
-									"                                                    \"title\": \"The status schema\",\r",
-									"                                                    \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"                                                    \"default\": \"\",\r",
-									"                                                    \"examples\": [\r",
-									"                                                        \"Idle\"\r",
-									"                                                    ]\r",
-									"                                                }\r",
-									"                                            },\r",
-									"                                            \"additionalProperties\": true\r",
-									"                                        }\r",
-									"                                    ]\r",
-									"                                }\r",
-									"                            }\r",
-									"                        },\r",
-									"                        \"additionalProperties\": true\r",
-									"                    }\r",
-									"                ]\r",
-									"            }\r",
-									"        },\r",
-									"        \"requestId\": {\r",
-									"            \"$id\": \"#/properties/requestId\",\r",
-									"            \"type\": \"string\",\r",
-									"            \"title\": \"The requestId schema\",\r",
-									"            \"description\": \"An explanation about the purpose of this instance.\",\r",
-									"            \"default\": \"\",\r",
-									"            \"examples\": [\r",
-									"                \"0HM27VB1OM0DS:00000001\"\r",
-									"            ]\r",
-									"        }\r",
-									"    },\r",
-									"    \"additionalProperties\": true\r",
-									"};\r",
-									"\r",
-									"pm.test('Schema is valid', function() {\r",
-									"  pm.expect(tv4.validate(jsonData, schema)).to.be.true;\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{jwt}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"type": "text",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{protocol}}://{{host}}:{{port}}/api/{{version}}/rundown('{{rundownId}}')/stories",
-							"protocol": "{{protocol}}",
-							"host": [
-								"{{host}}"
-							],
-							"port": "{{port}}",
-							"path": [
-								"api",
-								"{{version}}",
-								"rundown('{{rundownId}}')",
-								"stories"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Planning",
@@ -16922,7 +16545,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3c5b7364-bb93-44fa-af67-6a7c9e9047b9",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -18082,7 +17704,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "be3e46aa-c6ac-4ff6-b79b-2454a477a3ea",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -18559,7 +18180,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "28022687-46e0-4715-8f99-b3ecd06aa81b",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -19035,7 +18655,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "01ac0b45-7428-4c3d-b5bc-183e674a7955",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -19502,7 +19121,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "51383592-af4b-434b-aa39-5ac0e9d2a77f",
 								"exec": [
 									"var jsonData = pm.response.json();\r",
 									"\r",
@@ -19544,9 +19162,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
